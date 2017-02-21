@@ -1,18 +1,13 @@
-<!DOCTYPE html>
+{% extends 'funmash_app/base.html' %}
 {% load staticfiles %}
 
-<html>
-	<head lang="en">
-		<meta charset="UTF-8" />
-		<title>
-			Funmash
-		</title>
-	</head>
-	
-	<body>
+{% block title_block %}
+	About FunMash
+{% endblock %}
+
+{% block body_block %}
+	<h1>About FunMash</h1>
 		<div>
-			about
-		</div>
-		
-	</body>
-</html>
+			<!-- some info about us here -->
+		</div>	
+{% endblock %}

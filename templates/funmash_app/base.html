@@ -11,26 +11,67 @@
 		</title>
 	</head>
 	
-	<body>
-
-		
+			
 	<!-- In the later version, this block will be modified  show login form in the top - or username if the user is registered. For now we can put in a link to registration -->
-		<div>
+
+<div style="background-color: #FF7F50">
+	
+	<h1 style="color:#842424; font-weight: bold; font-size:40px">FunMash</h1>
+	<h3 style="color:#842424; font-style:italic; font-size:14px">World's greatest sense-of-humour experiment</h2>
+	
+	<style>
+	ul {
+    	list-style-type: none;
+    	margin: 0;
+    	padding: 0;
+    	overflow: hidden;
+    	background-color: #FF7F50;
+	}
+
+	li {
+    	float: right;
+	}
+
+	li a {
+    	display: block;
+    	color: black;
+    	text-align: center;
+    	padding: 16px;
+    	text-decoration: none;
+	}	
+
+
+</style>
+
+
+<ul>
+	<li><a href="{% url 'about' %}">About</a></li>
+	{% if user.is_authenticated %}
+		<li><a href="{% url 'profile' %}"></a></li>
+	{% else %}
+		<li><a href="{% url 'register' %}">Register</a></li>
+		{% endif %}
+
+	<li><a href= "{% url 'index' %}">Home</a></li>
+	</ul>
+	<!--	<div style="background-color: #FF7F50">
 		{% if user.is_authenticated %}
 			{{ user.username }}
 		{% else %}
-			<!-- register form will go here, for now it's a link -->
-			<a href="{% url 'register' %}">Register</a>
+			register form will go here, for now it's a link 			<a href="{% url 'register' %}">Register</a>
 		{% endif %}
-		</div>
+		</div> -->
 
+</div>
+		<hr noshade=noshade size=5>
+<body style="background-color: #FF7F50">
 		{% block body_block %}
 			Body block
 		{% endblock %}
 
-		<div>
+		<div style="background-color: #FF7F50">
 			{% block sidebar_block %}
-				Sidebar block
+				<!---infomation for side bar -->
 			{% endblock %}
 		</div>
 		
