@@ -1,18 +1,16 @@
-<!DOCTYPE html>
+{% extends 'funmash_app/base.html' %}
 {% load staticfiles %}
 
-<html>
-	<head lang="en">
-		<meta charset="UTF-8" />
-		<title>
-			Funmash
-		</title>
-	</head>
-	
-	<body>
-		<div>
-			login
-		</div>
-		
-	</body>
-</html>
+{% block title_block %}
+	Login
+{% endblock %}
+
+{% block body_block %}
+	<h1>Login to Funmash</h1>
+	<form id='login_form' method="POST" actions="{% url 'login' %}">
+		{% csrf_token %}
+		Username: <input type="text" name="Username" value="" size="50" /><br/>
+		Password: <input type="Password" value="" size="50" /><br/>
+		<input type="submit" value="Submit"/>
+	</form>form
+{% endblock %}

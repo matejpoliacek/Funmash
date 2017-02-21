@@ -16,6 +16,14 @@ Including another URLconf
 from django.conf.urls import url
 from funmash_app import views
 
+# @PETER 
+# I didn't put in URLs for account disabled and invalid login
+# because they don't have separate views. If you don't like
+# that the URL doesn't change, we can make separate
+# simple views for these, like the 'logout' view.
+# This version is working though and I think it's neater:)
+# @PETER
+
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^about/$', views.about, name='about'),

@@ -10,6 +10,15 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ('username', 'email', 'password')
 
+class UserProfileForm(forms.ModelForm):
+    
+    class Meta:
+        model = UserProfile
+        fields = ('image',)
+
+# once we have 'upload image' functionality, this form
+# will be required
+
 
 #class ImageForm(forms.ModelForm):
     # issueID = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
@@ -28,7 +37,7 @@ class UserForm(forms.ModelForm):
     # # An inline class to provide additional information on the form.
     # class Meta:
     #     # Provide an association between the ModelForm and a model
-    #     model = Issue
+    #     model = Image
     #     exclude = ('issueID', 'upvotes')
     #     # What was the following line for in rango?
     #     # fields = ('name',)

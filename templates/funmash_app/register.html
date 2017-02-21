@@ -1,18 +1,25 @@
-<!DOCTYPE html>
+{% extends 'funmash_app/base.html' %}
 {% load staticfiles %}
 
-<html>
-	<head lang="en">
-		<meta charset="UTF-8" />
-		<title>
-			Funmash
-		</title>
-	</head>
-	
-	<body>
-		<div>
-			reg
-		</div>
-		
-	</body>
-</html>
+{% block title_block %}
+	Register
+{% endblock %}
+
+{% block body_block %}
+	<h1>Register</h1>
+	{% if registered %}
+		<strong>Thank you for registering!</strong>
+		<a href="{% url 'index' %}">Return to the homepage</a>
+	{% else %}
+		<strong>Registration form blurb</strong><br/>
+		<form id="user_form" method="post" action="{% url 'register' %}" enctype="multipart/form-data">
+
+		{% csrf_token %}
+
+		{{ user_form.as_p}}
+		<!-- {{ profile_form.as_p}} -->
+
+		<input type="submit" name="submit" value="Register" />
+	</form>
+	{% endif %}
+{% endblock %}

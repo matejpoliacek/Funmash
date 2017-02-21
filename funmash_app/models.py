@@ -24,8 +24,11 @@ class UserProfile(models.Model):
     # A required line - links a UserProfile to User.
     user = models.OneToOneField(User)
 
-    # The additional attributes we wish to include.
+    # Additional attributes we might want to include.
     # website = models.URLField(blank=True)
-    # picture = models.ImageField(upload_to='profile_images', blank=True
+    # list / dictionary of uploaded images (image name in media or its ID in media)
+
+    image = models.ImageField(upload_to='', blank=True)
+
     def __unicode__(self):
         return self.user.username

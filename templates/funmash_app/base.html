@@ -4,14 +4,34 @@
 <html>
 	<head lang="en">
 		<meta charset="UTF-8" />
-		<title>
+		<title> Funmash -
+		{% block title_block %}
 			Funmash
+		{% endblock %}
 		</title>
 	</head>
 	
 	<body>
+
+		
+	<!-- In the later version, this block will be modified  show login form in the top - or username if the user is registered. For now we can put in a link to registration -->
 		<div>
-			div
+		{% if user.is_authenticated %}
+			{{ user.username }}
+		{% else %}
+			<!-- register form will go here, for now it's a link -->
+			<a href="{% url 'register' %}">Register</a>
+		{% endif %}
+		</div>
+
+		{% block body_block %}
+			Body block
+		{% endblock %}
+
+		<div>
+			{% block sidebar_block %}
+				Sidebar block
+			{% endblock %}
 		</div>
 		
 	</body>
