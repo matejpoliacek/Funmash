@@ -1,0 +1,33 @@
+body {
+	background-color: #ffe29b;
+	}
+
+#header {
+	padding-left: 5%;
+	padding-top: 2%;
+	background-color: #bc2800;
+	outline: 2px solid #BD0000;
+	max-width: 35%;
+	
+}
+	
+#header	h1 {
+	
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	
+	font-style: normal;
+	font-variant: normal;
+	
+	line-height: 26.4px;
+	
+	color:#f7efdc;
+	
+	font-weight: bold; 
+	font-size:40px;
+}
+
+#header h2 {
+	color:#ffffff;
+	font-style:italic;
+	font-size:14px;
+}
