@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href={% static 'css/style.css' %}/>
 
 <html>
 	<head lang="en">
@@ -14,11 +16,13 @@
 			
 	<!-- In the later version, this block will be modified  show login form in the top - or username if the user is registered. For now we can put in a link to registration -->
 
-<div style="background-color: #FF7F50">
+<div id="header">
 	
-	<h1 style="color:#842424; font-weight: bold; font-size:40px">FunMash</h1>
-	<h3 style="color:#842424; font-style:italic; font-size:14px">World's greatest sense-of-humour experiment</h2>
-	
+	<h1>FunMash</h1>
+	<h2>World's greatest sense-of-humour experiment</h2>
+</div>
+
+<div id="link">
 	<style>
 	ul {
     	list-style-type: none;
@@ -35,13 +39,13 @@
 	li a {
     	display: block;
     	color: black;
-    	text-align: center;
+    	text-align: center;	
     	padding: 16px;
     	text-decoration: none;
 	}	
 
 
-</style>
+	</style>
 
 
 <ul>
@@ -64,12 +68,13 @@
 
 </div>
 		<hr noshade=noshade size=5>
-<body style="background-color: #FF7F50">
+<body>
 		{% block body_block %}
 			Body block
 		{% endblock %}
 
-		<div style="background-color: #FF7F50">
+		<div>
+		<p> test </p>
 			{% block sidebar_block %}
 				<!---infomation for side bar -->
 			{% endblock %}
