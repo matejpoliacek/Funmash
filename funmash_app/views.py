@@ -19,8 +19,9 @@ def index(request):
     images = Image.objects.all()
 
     numOfImages = len(images)
-    ranNum1 = randint(0, numOfImages)
-    ranNum2 = randint(0, numOfImages)
+
+    ranNum1 = randint(0, numOfImages-1)
+    ranNum2 = randint(0, numOfImages-1)
 
     while (ranNum2 == ranNum1):
         ranNum2 = randint(0, numOfImages)
@@ -41,9 +42,7 @@ def index(request):
 
 def index2(request, image_name):
     image = Image.objects.get(name=image_name)
-    print(str(image.ranking))
     image.ranking = image.ranking + 1
-    print(str(image.ranking))
     image.save()
 
     return index(request)
