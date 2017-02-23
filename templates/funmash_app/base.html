@@ -25,48 +25,23 @@
 </a>
 
 <div class="panel">
-	<style>
-	ul {
-    	list-style-type: none;
-    	margin: 0;
-    	padding: 0;
-    	overflow: hidden;
-    	background-color: #FF7F50;
-	}
-
-	li {
-    	float: right;
-	}
-
-	li a {
-    	display: block;
-    	color: black;
-    	text-align: center;	
-    	padding: 16px;
-    	text-decoration: none;
-	}	
-
-
-	</style>
-
-
-<ul>
-	<li><a href="{% url 'about' %}">About</a></li>
-	{% if user.is_authenticated %}
-		<li><a href="{% url 'profile' %}"></a></li>
-	{% else %}
-		<li><a href="{% url 'register' %}">Register</a></li>
-		{% endif %}
-
-	<li><a href= "{% url 'index' %}">Home</a></li>
-	</ul>
-	<!--	<div style="background-color: #FF7F50">
+	<ul>
+		<li><a href="{% url 'about' %}">About</a></li>
 		{% if user.is_authenticated %}
-			{{ user.username }}
+			<li><a href="{% url 'profile' %}"></a></li>
 		{% else %}
-			register form will go here, for now it's a link 			<a href="{% url 'register' %}">Register</a>
-		{% endif %}
-		</div> -->
+			<li><a href="{% url 'register' %}">Register</a></li>
+			{% endif %}
+
+		<li><a href= "{% url 'index' %}">Home</a></li>
+		</ul>
+		<!--	<div style="background-color: #FF7F50">
+			{% if user.is_authenticated %}
+				{{ user.username }}
+			{% else %}
+				register form will go here, for now it's a link 			<a href="{% url 'register' %}">Register</a>
+			{% endif %}
+			</div> -->
 
 </div>
 		<hr noshade=noshade size=5>

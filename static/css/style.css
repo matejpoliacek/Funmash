@@ -10,11 +10,12 @@ a  {
 	
 .logo {
 	padding-left: 50px;
-	padding-top: 1%;
-	padding-bottom: 1%;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	background-color: #bc2800;
 	outline: 5px solid #BD0000;
-	max-width: 35%;
+	max-width: 350px;
+	margin-left: 20px
 }
 	
 .logo	h1 {
@@ -24,12 +25,12 @@ a  {
 	font-style: normal;
 	font-variant: normal;
 	
-	line-height: 45%;
+	line-height: 5px;
 	
 	color:#f7efdc;
-	
+	padding-left: 20px;
 	font-weight: bold; 
-	font-size:40px;
+	font-size:60px;
 	
 }
 
@@ -37,10 +38,42 @@ a  {
 	color:#ffffff;
 	font-style:italic;
 	font-size:14px;
+	padding-left: 20px;
 }
 
 .panel {
-	backgroud.color: ;
-	margin-top: -10%;
-	margin-left: 40%;
-	margin-bottom: 5%;
+	background-color: #BD0000;
+	margin-top: -95px;
+	margin-left: 420px;
+	margin-bottom: 55px;
+}
+
+.panel ul {
+    	list-style-type: none;
+    	margin: 0;
+    	padding: 0;
+    	overflow: hidden;
+    	/*background-color: #FF7F50;*/
+	}
+
+.panel	li {
+    	float: right;
+	}
+
+.panel	li a {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	
+	font-style: normal;
+	font-variant: normal;
+	
+	
+	
+	color:#f7efdc;
+		
+		
+		display: block;
+    
+    	text-align: center;	
+    	padding: 16px;
+    	text-decoration: none;
+	}		
