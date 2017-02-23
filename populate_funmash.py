@@ -17,7 +17,7 @@ def populate():
         #images["source"] = settings.MEDIA_URL+"/"+id
         #images["ranking"] = x+1
         add_img(id, settings.MEDIA_URL+id, x+1)
-        print("added" + settings.MEDIA_URL + id + str(x+1))
+        print("added" + settings.MEDIA_URL + id)
 
 
 
