@@ -2,32 +2,45 @@ body {
 	background-color: #ffe29b;
 	}
 
-#header {
-	padding-left: 5%;
-	padding-top: 2%;
-	background-color: #bc2800;
-	outline: 2px solid #BD0000;
-	max-width: 35%;
+	/* this will likely remove all underlines */
+a  { 
+	text-decoration: none;
 	
 }
 	
-#header	h1 {
+.logo {
+	padding-left: 50px;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	background-color: #bc2800;
+	outline: 5px solid #BD0000;
+	max-width: 35%;
+}
+	
+.logo	h1 {
 	
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	
 	font-style: normal;
 	font-variant: normal;
 	
-	line-height: 26.4px;
+	line-height: 45%;
 	
 	color:#f7efdc;
 	
 	font-weight: bold; 
 	font-size:40px;
+	
 }
 
-#header h2 {
+.logo h2 {
 	color:#ffffff;
 	font-style:italic;
 	font-size:14px;
 }
+
+.panel {
+	backgroud.color: ;
+	margin-top: -10%;
+	margin-left: 40%;
+	margin-bottom: 5%;
