@@ -8,5 +8,21 @@
 {% block body_block %}
 	
 	<h1>One index to rule them all.</h1>
+	
+	{% if firstImage %}
+		<div>
+			<img src="{{ firstImage.source }}"> 
+		</div>
+	{% else %}
+		First image is missing. FixIt!	
+	{% endif %}
+	
+	{%if secondImage %}
+		<div>
+			<img src = "{{ secondImage.source }}" >
+		</div>
+	{% else %}
+		Second image is missing. FixIt!
+	{% endif %}
 
 {% endblock %}

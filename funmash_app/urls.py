@@ -26,6 +26,8 @@ from funmash_app import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+# experimenting with how images are passed - modified urls as well (added index2 view)
+    url(r'^index2/$', views.index2, name='index2'),
     url(r'^about/$', views.about, name='about'),
     url(r'^change_password/$', views.change_password, name='change_password'),
     url(r'^login/$', views.login, name='login'),

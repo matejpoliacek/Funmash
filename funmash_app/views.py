@@ -3,8 +3,9 @@ from django.http import HttpResponse
 
 from funmash_app.models import Image, UserProfile
 
-from funmash_app.forms import UserForm, UserProfileForm 
-# plus ImageForm
+from funmash_app.forms import UserForm, UserProfileForm # TODO plus ImageForm
+
+from random import randint
 
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
@@ -12,6 +13,45 @@ from django.core.urlresolvers import reverse
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+
+def index(request):
+    context_dict = {}
+    images = Image.objects.all()
+
+    numOfImages = len(images)
+    ranNum1 = randint(0, numOfImages)
+    ranNum2 = randint(0, numOfImages)
+
+    while (ranNum2 == ranNum1):
+        ranNum2 = randint(0, numOfImages)
+
+    firstImage = images[ranNum1]
+    secondImage = images[ranNum2]
+
+    context_dict = {'firstImage': firstImage, 'secondImage': secondImage}
+
+    return render(request, 'funmash_app/index.html', context=context_dict)
+
+# experimenting with how images are passed - modified urls as well (added index2)
+
+# TODO index 2 has to redirect to a new view that midifies the image
+# image 2 will redirect and process_image_source and pass it to index
+
+
+
+def index2(request, image_source):
+    context_dict = {}
+    image = Image.objects.get(source=image_source)
+    image.ranking = image.ranking + 1
+
+    return render(request, 'funmash_app/index.html')
+
+# INDEX BACKUP:
+# def index(request):
+#   context_dict = {}
+# return render(request, 'funmash_app/index.html', context=context_dict)
+
+
 
 # register, login and logout stuff
 # different from Rango where we also put in profile_form
@@ -75,11 +115,6 @@ def login(request):
 def logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('login'))
-
-
-def index(request):
-    context_dict = {}
-    return render(request, 'funmash_app/index.html', context=context_dict)
 
 
 def about(request):

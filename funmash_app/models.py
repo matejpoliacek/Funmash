@@ -26,7 +26,7 @@ class Image(models.Model):
 
 
     def __str__(self):
-        return self.id
+        return self.name
 
 
 class UserProfile(models.Model):
