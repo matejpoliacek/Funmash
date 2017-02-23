@@ -11,7 +11,8 @@
 	
 	{% if firstImage %}
 		<div>
-			<img src="{{ firstImage.source }}"> 
+			<a href="{% url 'index2' firstImage.name %}">
+			<img src="{{ firstImage.source }}" > 
 		</div>
 	{% else %}
 		First image is missing. FixIt!	
@@ -19,6 +20,7 @@
 	
 	{%if secondImage %}
 		<div>
+			<a href="{% url 'index2' secondImage.name %}">
 			<img src = "{{ secondImage.source }}" >
 		</div>
 	{% else %}

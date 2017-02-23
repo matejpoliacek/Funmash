@@ -12,11 +12,11 @@ from django.conf import settings
 def populate():
     images = {}
     for x in range(1,13):
-        id = "1 (" + str(x) + ").jpg"
+        id = str(x) + ".jpg"
         #images["name"]= "1 ("+x+").jpg",
         #images["source"] = settings.MEDIA_URL+"/"+id
         #images["ranking"] = x+1
-        add_img(id, settings.MEDIA_URL+id, x+1)
+        add_img(str(x), settings.MEDIA_URL+id, x+1)
         print("added" + settings.MEDIA_URL + id)
 
 

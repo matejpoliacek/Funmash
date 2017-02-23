@@ -39,12 +39,14 @@ def index(request):
 
 
 
-def index2(request, image_source):
-    context_dict = {}
-    image = Image.objects.get(source=image_source)
+def index2(request, image_name):
+    image = Image.objects.get(name=image_name)
+    print(str(image.ranking))
     image.ranking = image.ranking + 1
+    print(str(image.ranking))
+    image.save()
 
-    return render(request, 'funmash_app/index.html')
+    return index(request)
 
 # INDEX BACKUP:
 # def index(request):
