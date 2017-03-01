@@ -1,13 +1,86 @@
-{% extends 'funmash_app/base.html' %}
+<!doctype html>
 {% load staticfiles %}
+<html>
+	<head>
+ 		<link rel="stylesheet" type="text/css" href="{% static 'css/profileStyle.css' %}" />
+		User Profile
+	</head>
+	<body>
 
+	<section class="mainsection">
+	<section>
+		<div class="toppanel">
+		<div id="username">
+		<br>
+		  {% if user.is_authenicated %}
+		  	{{ user.name }} 
+		  {% else %}
+		  	User
+		  {% endif %}
+		 </div>
+		 <div id="logout">
+		 	<a href="{% url 'logout' %}">Logout</a>
+		 </div>
+		
+		</div>
+		<div class="time">
+		
+		<p>User since [x]</p>
+		</div>
+		<div class="changePassword">
 
-{% block title_block %}
-	Funmash - profile
-{% endblock %}
+		<a href="{% url 'change_password' %}">Change password</a>
+		<br>
+		</div>
+		<div class="top5button">
+		<br>
+		<a href="{% url 'top5' %}">View Top Images</a>
+		</div>
 
-{% block body_block %}
+		
+		<div class="form">
+		<p id="firsttext">Submit an image to the mash pit</>
+		<p id="secondtext">Add new image</p>
 	
-	<h1>Your profile</h1>
 
-{% endblock %}
+			<form id ="image_form" method="POST" action="{% url 'profile' %}"  enctype="multipart/form-data">
+				{% csrf_token %}
+			Image name: <input type="file" name="name" accept="image/*" value="" size="50" />
+			{{ form.as_p }}
+			<br/>
+			<input type="submit"/>
+			</form>
+		
+		</div>
+		</section>
+		<section>
+
+		<div>
+		<p>Your submissions</p>
+		
+		<table class="imagescontainer">
+		<tr>
+		
+			<td>
+				<img src="/media/1.jpg"> </td>
+			<td><img src="/media/2.jpg"> </td>
+			<td><img src="/media/3.jpg"> </td>
+		</tr>
+		<tr>
+			<td><img src="/media/4.jpg"> </td>
+			<td><img src="/media/5.jpg"> </td>
+		</tr>
+		</table>
+		</div>
+		
+		</section>
+		</section>
+
+	</body>
+</html>
+ 
+
+ 
+  
+
+

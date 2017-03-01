@@ -31,10 +31,9 @@
 			<li><a href="{% url 'profile' %}">Your Profile</a></li>
 		{% else %}
 			<li><a href="{% url 'register' %}">Register</a></li>
-			{% endif %}
-
-		<li><a href= "{% url 'index' %}">Home</a></li>
+			<li><a href="{% url 'login' %}">Login</a></li><li><a href= "{% url 'index' %}">Home</a></li>
 		</ul>
+		{% endif %}
 		<!--	<div style="background-color: #FF7F50">
 			{% if user.is_authenticated %}
 				{{ user.username }}

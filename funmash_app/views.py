@@ -3,7 +3,8 @@ from django.http import HttpResponse
 
 from funmash_app.models import Image, UserProfile
 
-from funmash_app.forms import UserForm, UserProfileForm # TODO plus ImageForm
+from funmash_app.forms import UserForm, UserProfileForm, ImageForm
+## TODO plus ImageForm
 
 from random import randint
 
@@ -86,7 +87,7 @@ def register(request):
     # user_profile_form will have to be included in 
     # UserProfile view ) in a similar manner as above
 
-def login(request):
+def user_login(request):
     
     if request.method == 'POST':
        
@@ -127,11 +128,37 @@ def change_password(request):
 
 
 def profile(request):
+#	form = UserProfileForm()
+	
+	#if request.method == 'POST':
+		#form = UserProfileForm(request.POST)
+		
+		# Has valid information been provided to the form
+		#if form.is_valid():
+			#Save the new user to the database.
+		#	form.save(commit=True)
+	    #	return index(request)
+		#else:
+		#	print(form.errors)
+			
     return render(request, 'funmash_app/profile.html')
+#, {'form': form})
 
 
 def top5(request):
     return render(request, 'funmash_app/top5.html')
+
+def upload_pic(request):
+    form = ImageForm
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save(commit=True)
+            return index(request)
+        else:
+            print(form.errors)
+    return render(request, 'funmash_app/profile.html', {'form': form})
+
 
 
 # def addIssue(request):

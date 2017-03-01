@@ -11,14 +11,23 @@ class UserForm(forms.ModelForm):
         fields = ('username', 'email', 'password')
 
 class UserProfileForm(forms.ModelForm):
-    
+
     class Meta:
         model = UserProfile
         fields = ('image',)
+		
 
 # once we have 'upload image' functionality, this form
 # will be required
 
+class ImageForm(forms.ModelForm):
+  #  user = forms.CharField(widget=forms.HiddenInput())
+
+   # image = forms.ImageField(upload_to='media/', blank=True)
+
+    class Meta:
+        model = UserProfile
+        fields = ('user','image',)
 
 #class ImageForm(forms.ModelForm):
     # issueID = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
