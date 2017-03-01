@@ -1,0 +1,95 @@
+body {
+	background-color: #ffe29b;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	color:#000000;
+	}
+.toppanel {
+	float: center;
+}
+#username
+{
+  display:inline-block;
+  
+  width: 100px;
+}
+
+#logout
+{
+  display:inline-block;
+  
+  
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+
+
+
+
+.time p {
+	
+
+	color: #A9A9A9;
+	font-size: 12px;
+
+}
+.changePassword a {
+	font-size: 12px;
+	padding-bottom: 12px;
+
+	
+}
+
+.top5button a {
+	position: relative;
+	left: 100px;
+	font-size: 16px;
+	color: red;
+ padding: 2px 12px 2px 12px; 
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-left: 1px solid #000000;
+}
+.mainsection {
+	float: center;
+}
+.mainsection section {
+	width: 50%;
+	float: left;
+}
+.imagescontainer table {
+	width: 100%;
+}
+
+.imagescontainer td {
+	padding: 10px;
+}
+.imagescontainer img {
+	width: 75px;
+	height: 75px;
+}
+.form  {
+	float: center;
+	
+}
+#firsttext {
+	font-weight: bold;
+	font-size: 16px;
+}
+#secondtext {
+	font-style: italic;
+	font-size: 12px;
+}
+
+
+
