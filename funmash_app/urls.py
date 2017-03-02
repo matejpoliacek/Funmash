@@ -30,10 +30,11 @@ urlpatterns = [
     url(r'^index/(?P<image_name>[\d+]+)/$', views.index2, name='index2'),
     url(r'^about/$', views.about, name='about'),
     url(r'^change_password/$', views.change_password, name='change_password'),
-    url(r'^login/$', views.login, name='login'),
+  #  url(r'^login/$', views.login, name='login'),
     url(r'^profile/$', views.profile, name='profile'),
-    url(r'^register/$', views.register, name='register'),
+ #   url(r'^register/$', views.register, name='register'),
     url(r'^top5/$', views.top5, name='top5'),
-    url(r'^logout/$', views.logout, name='logout'),
+   # url(r'^logout/$', views.logout, name='logout'),
+
 ]
 

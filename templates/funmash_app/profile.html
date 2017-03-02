@@ -1,25 +1,28 @@
-<!doctype html>
+{% extends 'funmash_app/base.html' %}
 {% load staticfiles %}
-<html>
-	<head>
- 		<link rel="stylesheet" type="text/css" href="{% static 'css/profileStyle.css' %}" />
-		User Profile
-	</head>
-	<body>
 
+{% block title_block %}
+	{{ selecteduser.username }}
+	
+{% endblock %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/profileStyle.css' %}" />
+{% endblock %}
+ 		
+{% block body_block %}
 	<section class="mainsection">
 	<section>
 		<div class="toppanel">
 		<div id="username">
 		<br>
-		  {% if user.is_authenicated %}
-		  	{{ user.name }} 
+		  {% selecteduser.username == user.username %}
+		  	{{ user.username }} 
 		  {% else %}
 		  	User
 		  {% endif %}
 		 </div>
 		 <div id="logout">
-		 	<a href="{% url 'logout' %}">Logout</a>
+		 	<a href="{% url 'auth_logout' %}?next=/funmash_app/">Logout</a>
 		 </div>
 		
 		</div>
@@ -27,11 +30,11 @@
 		
 		<p>User since [x]</p>
 		</div>
-		<div class="changePassword">
+	<!-- 	<div class="changePassword">
 
 		<a href="{% url 'change_password' %}">Change password</a>
 		<br>
-		</div>
+		</div> -->
 		<div class="top5button">
 		<br>
 		<a href="{% url 'top5' %}">View Top Images</a>
@@ -76,8 +79,7 @@
 		</section>
 		</section>
 
-	</body>
-</html>
+{% endblock %}
  
 
  

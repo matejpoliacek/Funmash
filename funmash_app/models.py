@@ -37,7 +37,7 @@ class UserProfile(models.Model):
     # website = models.URLField(blank=True)
     # list / dictionary of uploaded images (image name in media or its ID in media)
 
-    image = models.ImageField(upload_to='', blank=True)
+    image = models.ImageField(upload_to='/media/', blank=True)
 
     def __unicode__(self):
         return self.user.username

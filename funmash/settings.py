@@ -53,11 +53,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'funmash_app',
+    'registration',
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -129,5 +131,17 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Set to True so users can register
+REGISTRATION_OPEN = True
+# One-week activation window for users to activate their account
+ACCOUNT_ACTIVATION_DAYS = 7
+# This will automatically log in user.
+REGISTRATION_AUTO_LOGIN = True
+#The page users will arrive at after they successfully log in
+LOGIN_REDIRECT_URL = '/funmash_app/'
+# The page users are directed to if they are not logged in,
+# and are trying to access pages requiring authentication
+LOGIN_URL = '/accounts/login/'
 
 

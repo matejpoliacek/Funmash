@@ -3,6 +3,7 @@ from django.http import HttpResponse
 
 from funmash_app.models import Image, UserProfile
 
+
 from funmash_app.forms import UserForm, UserProfileForm, ImageForm
 ## TODO plus ImageForm
 
@@ -87,9 +88,8 @@ def register(request):
     # user_profile_form will have to be included in 
     # UserProfile view ) in a similar manner as above
 
-def user_login(request):
-    
-    if request.method == 'POST':
+"""#def user_login(request):
+ #   if request.method == 'POST':
        
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -97,7 +97,7 @@ def user_login(request):
         user = authenticate(username=username, password=password)
         
         if user:
-          
+
             if user.is_active:
 
                 login(request, user)
@@ -113,10 +113,10 @@ def user_login(request):
 
         return render(request, 'funmash_app/login.html', {})
 
-@login_required
-def logout(request):
-    logout(request)
-    return HttpResponseRedirect(reverse('login'))
+#@login_required
+#def logout(request):
+ #  logout(request)
+  # return HttpResponseRedirect(reverse('login'))"""
 
 
 def about(request):
@@ -128,21 +128,23 @@ def change_password(request):
 
 
 def profile(request):
-#	form = UserProfileForm()
-	
-	#if request.method == 'POST':
-		#form = UserProfileForm(request.POST)
-		
-		# Has valid information been provided to the form
-		#if form.is_valid():
-			#Save the new user to the database.
-		#	form.save(commit=True)
-	    #	return index(request)
-		#else:
-		#	print(form.errors)
-			
+    #	form = UserProfileForm()
+
+    # if request.method == 'POST':
+    # form = UserProfileForm(request.POST)
+
+    # Has valid information been provided to the form
+    # if form.is_valid():
+    # Save the new user to the database.
+    #	form.save(commit=True)
+    #	return index(request)
+    # else:
+    #	print(form.errors)
+
     return render(request, 'funmash_app/profile.html')
-#, {'form': form})
+
+
+# , {'form': form})
 
 
 def top5(request):
