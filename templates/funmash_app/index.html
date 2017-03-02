@@ -5,12 +5,17 @@
 	Funmash - index
 {% endblock %}
 
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+{% endblock %}
+
+
 {% block body_block %}
 	
 	<h1>One index to rule them all.</h1>
-	
+	<div id="bothimages">
 	{% if firstImage %}
-		<div>
+		<div class="image" id="img1">
 			<a href="{% url 'index2' firstImage.name %}">
 			<img src="{{ firstImage.source }}" > 
 		</div>
@@ -19,12 +24,12 @@
 	{% endif %}
 	
 	{%if secondImage %}
-		<div>
+		<div  class="image" id="img2">
 			<a href="{% url 'index2' secondImage.name %}">
 			<img src = "{{ secondImage.source }}" >
 		</div>
 	{% else %}
 		Second image is missing. FixIt!
 	{% endif %}
-
+	</div>
 {% endblock %}
