@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title_block %}
-	{{ selecteduser.username }}
+	{{ selecteduser.username }} Profile
 	
 {% endblock %}
 {% block styles %}
@@ -15,12 +15,15 @@
 		<div class="toppanel">
 		<div id="username">
 		<br>
-		  {% selecteduser.username == user.username %}
-		  	{{ user.username }} 
-		  {% else %}
-		  	User
-		  {% endif %}
+		{{ selecteduser.username }} Profile
 		 </div>
+		 {% if selecteduser.username == user.username %}
+		 	<form method="post" action="." enctype="multipart/form-data">
+		 	{% csrf_token %}
+		 	{{ form.as_p }}
+		 	<input type="submit" value="Update" />
+		 	</form>
+		 {% endif %}
 		 <div id="logout">
 		 	<a href="{% url 'auth_logout' %}?next=/funmash_app/">Logout</a>
 		 </div>
@@ -30,11 +33,10 @@
 		
 		<p>User since [x]</p>
 		</div>
-	<!-- 	<div class="changePassword">
+		<div class="changePassword">
+		<a href="{%  url 'auth_password_change' %}">Change password</a></div>
 
-		<a href="{% url 'change_password' %}">Change password</a>
-		<br>
-		</div> -->
+
 		<div class="top5button">
 		<br>
 		<a href="{% url 'top5' %}">View Top Images</a>

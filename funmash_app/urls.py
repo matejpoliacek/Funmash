@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from funmash_app import views
+from django.conf import settings
+
 
 # @PETER 
 # I didn't put in URLs for account disabled and invalid login
@@ -29,11 +31,14 @@ urlpatterns = [
 # experimenting with how images are passed - modified urls as well (added index2 view)
     url(r'^index/(?P<image_name>[\d+]+)/$', views.index2, name='index2'),
     url(r'^about/$', views.about, name='about'),
-    url(r'^change_password/$', views.change_password, name='change_password'),
-  #  url(r'^login/$', views.login, name='login'),
-    url(r'^profile/$', views.profile, name='profile'),
+    #url(r'^change_password/$', views.change_password, name='change_password'),
+  #  url(r'^register_profile/$', views.register_profile, name='register_profile'),
+    #  url(r'^login/$', views.login, name='login'),
+   url(r'^profile/$', views.profile, name='profile'),
  #   url(r'^register/$', views.register, name='register'),
     url(r'^top5/$', views.top5, name='top5'),
+
+    #url(r'^profile/(?P<username>[\w\-]+)/$', views.profile, name='profile'),
    # url(r'^logout/$', views.logout, name='logout'),
 
 ]

@@ -29,14 +29,19 @@
 
 <div class="panel">
 	<ul>
-		<li><a href="{% url 'about' %}">About</a></li>
+		
 		{% if user.is_authenticated %}
 			<li><a href="{% url 'profile' %}">Your Profile</a></li>
+			<li><a href="{% url 'auth_logout' %}?next=/funmash_app/">Logout</a></li>
+
 		{% else %}
 			<li><a href="{% url 'registration_register' %}">Register</a></li>
-			<li><a href="{% url 'auth_login' %}">Login</a></li><li><a href= "{% url 'index' %}">Home</a></li>
-		</ul>
+			<li><a href="{% url 'auth_login' %}">Login</a></li>
 		{% endif %}
+			<li><a href= "{% url 'index' %}">Home</a></li>
+			<li><a href="{% url 'about' %}">About</a></li>
+		</ul>
+		
 		<!--	<div style="background-color: #FF7F50">
 			{% if user.is_authenticated %}
 				{{ user.username }}

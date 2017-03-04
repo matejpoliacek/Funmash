@@ -16,7 +16,7 @@ class Image(models.Model):
 
     # ranking of the file (higher = better)
     ranking = models.IntegerField(default=0)
-
+    upload = models.ImageField(upload_to='/media/', null=True, blank=True)
     # FUTURE VERSION SUGGESTED ATTRIBUTES:
     # battles (set of other image names with which it competed - these must not be shown again with this image)
     # category (tags to classify images, e.g. cats, memes, dry, stereotype, fail, ...
@@ -37,7 +37,7 @@ class UserProfile(models.Model):
     # website = models.URLField(blank=True)
     # list / dictionary of uploaded images (image name in media or its ID in media)
 
-    image = models.ImageField(upload_to='/media/', blank=True)
+#    image = models.ImageField(upload_to='/media/', blank=True)
 
     def __unicode__(self):
         return self.user.username

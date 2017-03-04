@@ -19,10 +19,19 @@ from django.contrib import admin
 from funmash_app import views
 from django.conf import settings
 from django.conf.urls.static import static
+from registration.backends.simple.views import RegistrationView
+
+# Class to redirect user to the index page once they
+# have completed registration
+class MyRegistrationView(RegistrationView):
+    def get_success_url(self, user):
+        return url('/register_profile/')
+
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^funmash_app/', include('funmash_app.urls')),
+    url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^admin/', admin.site.urls),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
