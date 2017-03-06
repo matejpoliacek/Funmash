@@ -1,6 +1,6 @@
 {% extends 'funmash_app/base.html' %}
 {% load static %}
-
+	
 {% block title_block %}
 	Funmash - index
 {% endblock %}
@@ -14,22 +14,23 @@
 	
 	<h1>One index to rule them all.</h1>
 	<div id="bothimages">
+	<div id="cimg1">
 	{% if firstImage %}
-		<div class="image" id="img1">
-			<a href="{% url 'index2' firstImage.name %}">
+		<div class="image" id="img1" number="{{ firstImage.name }}">			
 			<img src="{{ firstImage.source }}" > 
 		</div>
 	{% else %}
 		First image is missing. FixIt!	
 	{% endif %}
-	
+	</div>
+	<div id="cimg2">
 	{%if secondImage %}
-		<div  class="image" id="img2">
-			<a href="{% url 'index2' secondImage.name %}">
+		<div  class="image" id="img2" number="{{ secondImage.name }}">			
 			<img src = "{{ secondImage.source }}" >
 		</div>
 	{% else %}
 		Second image is missing. FixIt!
 	{% endif %}
+	</div>
 	</div>
 {% endblock %}

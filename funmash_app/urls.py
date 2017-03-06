@@ -30,6 +30,9 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
 # experimenting with how images are passed - modified urls as well (added index2 view)
     url(r'^index/(?P<image_name>[\d+]+)/$', views.index2, name='index2'),
+    url(r'^liked_images/$', views.like_picture, name='liked_images'),
+    url(r'^render_pic1/$', views.render_pic1, name='render_pic1'),
+    url(r'^render_pic2/$', views.render_pic2, name='render_pic2'),
     url(r'^about/$', views.about, name='about'),
     #url(r'^change_password/$', views.change_password, name='change_password'),
   #  url(r'^register_profile/$', views.register_profile, name='register_profile'),

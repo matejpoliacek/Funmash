@@ -90,8 +90,53 @@ def upload_pic(request):
     return render(request, 'funmash_app/profile.html', {'form': form})
 
 
+def like_picture(request):
+    pic_name=None
+    if request.method == 'GET':
+        pic_name = request.GET['picture_name']
+        ranking = 0
+        if pic_name:
+
+            pic = Image.objects.get(name=pic_name)
+            if pic:
+                ranking = pic.ranking + 1
+                pic.ranking = ranking
+                pic.save()
+
+        return HttpResponse(0)
 
 
+def render_pic1(request):
+    if request.method == 'GET':
+        context_dict = {}
+        images = Image.objects.all()
+        numOfImages = len(images)
+        ranNum1 = randint(0, numOfImages - 1)
+        firstImage = images[ranNum1]
+
+        context_dict = {'firstImage': firstImage}
+
+        return render(request, 'funmash_app/render_pic1.html', context=context_dict)
+
+def render_pic2(request):
+    if request.method == 'GET':
+        pic_name = request.GET['picture_name']
+        pic_name = int(pic_name) - 1
+
+        images = Image.objects.all()
+        numOfImages = len(images)
+        ranNum2 = randint(0, numOfImages - 1)
+
+        while (ranNum2 == pic_name):
+            ranNum2 = randint(0, numOfImages)
+        context_dict = {}
+        images = Image.objects.all()
+
+        secondImage = images[ranNum2]
+
+        context_dict = {'secondImage': secondImage}
+
+        return render(request, 'funmash_app/render_pic2.html', context=context_dict)
 
 # def addIssue(request):
 #     if request.method == 'POST':
