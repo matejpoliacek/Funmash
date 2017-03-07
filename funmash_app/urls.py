@@ -35,10 +35,10 @@ urlpatterns = [
     url(r'^render_pic2/$', views.render_pic2, name='render_pic2'),
     url(r'^about/$', views.about, name='about'),
     #url(r'^change_password/$', views.change_password, name='change_password'),
-  #  url(r'^register_profile/$', views.register_profile, name='register_profile'),
+    #url(r'^register_profile/$', views.register_profile, name='register_profile'),
     #  url(r'^login/$', views.login, name='login'),
-   url(r'^profile/$', views.profile, name='profile'),
- #   url(r'^register/$', views.register, name='register'),
+    url(r'^profile/$', views.profile, name='profile'),
+    #url(r'^register/$', views.register, name='register'),
     url(r'^top5/$', views.top5, name='top5'),
 
     #url(r'^profile/(?P<username>[\w\-]+)/$', views.profile, name='profile'),

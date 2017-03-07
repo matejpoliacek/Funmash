@@ -17,7 +17,8 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
-
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 
 
 
@@ -68,10 +69,31 @@ def about(request):
 def change_password(request):
     return render(request, 'funmash_app/change_password.html')
 
+def add_img(name,source,ranking):
+    img = Image.objects.get_or_create(name=name)[0]
+    img.source = source
+    img.ranking = ranking
+    img.save()
+    return img
+
 
 @login_required
 def profile(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        images = Image.objects.all()
+        numOfNext = len(images) + 1
+        nameOfNext= str(numOfNext)+".jpg"
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(nameOfNext, myfile)
 
+        img=add_img(str(numOfNext), settings.MEDIA_URL + nameOfNext, 0)
+        print(img.name)
+
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'funmash_app/profile.html', {
+            'uploaded_file_url': uploaded_file_url
+        })
     return render(request, 'funmash_app/profile.html')
 
 
@@ -137,6 +159,10 @@ def render_pic2(request):
         context_dict = {'secondImage': secondImage}
 
         return render(request, 'funmash_app/render_pic2.html', context=context_dict)
+
+
+
+
 
 # def addIssue(request):
 #     if request.method == 'POST':
