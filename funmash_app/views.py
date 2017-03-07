@@ -79,22 +79,18 @@ def add_img(name,source,ranking):
 
 @login_required
 def profile(request):
-    if request.method == 'POST' and request.FILES['myfile']:
+    if request.method == 'POST':
         images = Image.objects.all()
         numOfNext = len(images) + 1
-        nameOfNext= str(numOfNext)+".jpg"
+        nameOfNext = str(numOfNext) + ".jpg"
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()
         filename = fs.save(nameOfNext, myfile)
-
-        img=add_img(str(numOfNext), settings.MEDIA_URL + nameOfNext, 0)
+        img = add_img(str(numOfNext), settings.MEDIA_URL + nameOfNext, 0)
         print(img.name)
-
-        uploaded_file_url = fs.url(filename)
-        return render(request, 'funmash_app/profile.html', {
-            'uploaded_file_url': uploaded_file_url
-        })
-    return render(request, 'funmash_app/profile.html')
+        return HttpResponse(0)
+    if request.method == 'GET':
+        return render(request, 'funmash_app/profile.html')
 
 
 def top5(request):
