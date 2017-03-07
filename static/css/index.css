@@ -1,7 +1,7 @@
 img.image {
 		display:inline-block;
-		height: 500px;
-		width: 380px;
+		height: 450px;
+		width: 350px;
 		vertical-align: middle;
 	}
 
@@ -11,5 +11,6 @@ img.image {
 	margin: auto;
 	border-spacing: 10px;
 	border-collapse: separate;
+	overflow: hidden;
 }
 
