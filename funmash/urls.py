@@ -25,7 +25,7 @@ from registration.backends.simple.views import RegistrationView
 # have completed registration
 class MyRegistrationView(RegistrationView):
     def get_success_url(self, user):
-        return url('/register_profile/')
+        return '/funmash_app/'
 
 
 urlpatterns = [
