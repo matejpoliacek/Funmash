@@ -1,3 +1,11 @@
+img.image {
+		display:inline-block;
+		height: 500px;
+		width: 380px;
+		vertical-align: middle;
+	}
+
+
 #bothimages {
 	display: table;
 	margin: auto;
@@ -5,20 +13,3 @@
 	border-collapse: separate;
 }
 
-.image { 
-	display: table-cell;
-	vertical-align: middle;
-	
-}
-	
-
-#img1 {
-	
-	
-	
-}
-
-#img2 {
-
-
-}

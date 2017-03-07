@@ -1,7 +1,7 @@
 {% if secondImage %}
-		<div  class="image" id="img2" number="{{ secondImage.name }}">			
-			<img src = "{{ secondImage.source }}" >
-		</div>
+		<span id="img2" number="{{ secondImage.name }}">			
+			<img class="image" src = "{{ secondImage.source }}" >
+		</span>
 	{% else %}
 		Second image is missing. FixIt!
 	{% endif %}

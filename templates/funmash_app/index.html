@@ -14,23 +14,24 @@
 	
 	<h1>One index to rule them all.</h1>
 	<div id="bothimages">
-	<div id="cimg1">
+	<span id="cimg1">
 	{% if firstImage %}
-		<div class="image" id="img1" number="{{ firstImage.name }}">			
-			<img src="{{ firstImage.source }}" > 
-		</div>
+		<span id="img1" number="{{ firstImage.name }}">			
+			<img class="image" src="{{ firstImage.source }}" > 
+		</span>
 	{% else %}
 		First image is missing. FixIt!	
 	{% endif %}
-	</div>
-	<div id="cimg2">
+	</span>
+	<span id="cimg2">
 	{%if secondImage %}
-		<div  class="image" id="img2" number="{{ secondImage.name }}">			
-			<img src = "{{ secondImage.source }}" >
-		</div>
+		<span id="img2" number="{{ secondImage.name }}">			
+			<img  class="image" src = "{{ secondImage.source }}" >
+		</span>
 	{% else %}
 		Second image is missing. FixIt!
 	{% endif %}
+	</span>
 	</div>
-	</div>
+	
 {% endblock %}
