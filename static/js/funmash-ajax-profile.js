@@ -28,4 +28,8 @@ $(document).ready(function (e) {
     $("#ImageBrowse").on("change", function() {
         $("#imageUploadForm").submit();
     });
+	
+	$('#input_pic').on('change', function(e) {
+		document.getElementById("ifsuccess").innerHTML = "";
+	});
 });
