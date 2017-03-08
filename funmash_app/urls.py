@@ -28,5 +28,7 @@ urlpatterns = [
     url(r'^profile/$', views.profile, name='profile'),
     url(r'^uploaded/$', views.uploaded, name='uploaded'),
     url(r'^top5/$', views.top5, name='top5'),
+    url(r'^next_pic/$', views.next_pic, name='next_pic'),
+    url(r'^previous_pic/$', views.previous_pic, name='previous_pic'),
 ]
 

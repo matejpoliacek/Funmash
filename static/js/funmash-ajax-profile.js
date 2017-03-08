@@ -35,7 +35,24 @@ $(document).ready(function (e) {
 		document.getElementById("ifsuccess").innerHTML = "";
 	});
 	
-	$('#next').click(function() {
+	$('#next').on('click',function(e) {
+		var query;
 		
+	    query = $('#keepTrack').attr("numOfPicLast");
+		
+		
+		$.get('/funmash_app/next_pic/', {numOfPic : query}, function(data) {
+			$('#uploaded').html(data);
+	});
+	});
+	
+	$('#previous').on('click',function(e) {		
+		var query2;
+	    
+		query2 = $('#keepTrack').attr("numOfPicFirst");
+		
+		$.get('/funmash_app/previous_pic/', {numOfFirst : query2}, function(data) {
+			$('#uploaded').html(data);
+	});
 	});
 });

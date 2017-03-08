@@ -64,8 +64,11 @@
 		<div>
 		<p>Your submissions</p>
 		
-		<table class="imagescontainer" id="uploaded" last_pic="">
-		<tr>
+		<table class="imagescontainer" id="uploaded" >
+		<!-- numOfPicLast is index of last picture + 1, numOfPicFirst is index of first picture -->
+		<!-- so basically when pressed next numOfPicLast becomes numOfPicFirst -->
+		<!-- these attribtuttes are then used in sending information in js-->
+		<tr id="keepTrack" numOfPicLast="{{ numOfImages }}" numOfPicFirst="{{ numOfFirstImage }}">
 		
 		{% if user_images1 %}
 			{% for image in user_images1 %}
@@ -82,6 +85,7 @@
 		</tr>
 		</table>
 		<button id="next">Next</button>
+		<button id="previous">Previous</button>
 		</div>
 		
 		</section>

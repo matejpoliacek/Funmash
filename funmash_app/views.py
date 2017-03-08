@@ -74,21 +74,95 @@ def profile(request):
         context_dict = {}
         user_images = []
         #need to reverse this order -->
-        user_images = (Image.objects.filter(owner=username))
+        user_images = list(reversed(Image.objects.filter(owner=username)))
+
+        last_image=user_images[0:6]
+
+        #Number of images loaded for the first time the page loads, not neccesarily 6
+        last_image=len(last_image)
+
+        #first image is always 0 as we reload the page
+        first_image=0
 
         context_dict['user_images1'] = user_images[0:3]
         context_dict['user_images2'] = user_images[3:6]
+        context_dict['numOfImages'] = last_image
+        context_dict['numOfFirstImage'] = first_image
         return render(request, 'funmash_app/profile.html', context_dict)
 
-
+#view to refresh the last uploaded image
 def uploaded(request):
     username = request.user.username
     if request.method == 'GET':
         context_dict = {}
         user_images = []
-        user_images = (Image.objects.filter(owner=username))
+        #this is how we reverse, who could tell, the list is needed as reversed
+        #is not outputting numbers in any structure
+        user_images = list(reversed(Image.objects.filter(owner=username)))
         context_dict['user_images1'] = user_images[0:3]
         context_dict['user_images2'] = user_images[3:6]
+        last_image = user_images[0:6]
+
+        # Number of images loaded for the first time the page loads
+        last_image = len(last_image)
+        context_dict['numOfImages'] = last_image
+
+        #first image is always zero here as well as we show the latest uploads
+        first_image = 0
+        context_dict['numOfFirstImage'] = first_image
+        return render(request, 'funmash_app/uploaded.html', context_dict)
+
+#view to see next images
+def next_pic(request):
+    username = request.user.username
+    if request.method == 'GET':
+        context_dict = {}
+        user_images = []
+        user_images = list(reversed(Image.objects.filter(owner=username)))
+        #how many pictures from start we have shown previously
+        #this now becomes our index of first image in next batch
+        numOfPic=int(request.GET['numOfPic'])
+        context_dict['user_images1'] = user_images[numOfPic:(numOfPic+3)]
+        context_dict['user_images2'] = user_images[(numOfPic+3):(numOfPic+6)]
+        first_image = numOfPic
+        #increase picture number for next potential batch
+        numOfPic=numOfPic+6
+        last_image = len(user_images)
+
+        #numOfPic cannot overstep number of images of user
+        if numOfPic>last_image:
+            numOfPic=last_image
+
+        context_dict['numOfImages'] = numOfPic
+        context_dict['numOfFirstImage'] = first_image
+        return render(request, 'funmash_app/uploaded.html', context_dict)
+
+#view to see previous images
+def previous_pic(request):
+    username = request.user.username
+    if request.method == 'GET':
+        context_dict = {}
+        user_images = []
+        user_images = list(reversed(Image.objects.filter(owner=username)))
+        first_image=int(request.GET['numOfFirst'])
+        numOfPic=first_image
+
+        #This is the case when we get to the start, beacuse we want to show as many as 6 pictures
+        if numOfPic<6:
+            #check if user actually even has 6 pictures
+            numOfPic=len(user_images[0:6])
+
+        #as we are going to previous batch we decrease by 6
+        first_image=first_image-6
+        #first image can not be less than 0
+        if first_image<0:
+            first_image=0
+
+        context_dict['user_images1'] = user_images[first_image:(first_image+3)]
+        context_dict['user_images2'] = user_images[(first_image+3):(first_image+6)]
+
+        context_dict['numOfImages'] = numOfPic
+        context_dict['numOfFirstImage'] = first_image
         return render(request, 'funmash_app/uploaded.html', context_dict)
 
 def top5(request):
