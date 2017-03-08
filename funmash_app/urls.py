@@ -18,31 +18,15 @@ from funmash_app import views
 from django.conf import settings
 
 
-# @PETER 
-# I didn't put in URLs for account disabled and invalid login
-# because they don't have separate views. If you don't like
-# that the URL doesn't change, we can make separate
-# simple views for these, like the 'logout' view.
-# This version is working though and I think it's neater:)
-# @PETER
-
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-# experimenting with how images are passed - modified urls as well (added index2 view)
-    url(r'^index/(?P<image_name>[\d+]+)/$', views.index2, name='index2'),
+    url(r'^index/(?P<image_name>[\d+]+)/$', views.index, name='index'),
     url(r'^liked_images/$', views.like_picture, name='liked_images'),
     url(r'^render_pic1/$', views.render_pic1, name='render_pic1'),
     url(r'^render_pic2/$', views.render_pic2, name='render_pic2'),
     url(r'^about/$', views.about, name='about'),
-    #url(r'^change_password/$', views.change_password, name='change_password'),
-    #url(r'^register_profile/$', views.register_profile, name='register_profile'),
-    #  url(r'^login/$', views.login, name='login'),
     url(r'^profile/$', views.profile, name='profile'),
-    #url(r'^register/$', views.register, name='register'),
+    url(r'^uploaded/$', views.uploaded, name='uploaded'),
     url(r'^top5/$', views.top5, name='top5'),
-
-    #url(r'^profile/(?P<username>[\w\-]+)/$', views.profile, name='profile'),
-   # url(r'^logout/$', views.logout, name='logout'),
-
 ]
 

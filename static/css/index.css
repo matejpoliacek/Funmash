@@ -1,7 +1,7 @@
 img.image {
 		display:inline-block;
 		height: 450px;
-		width: 350px;
+		width: auto;
 		vertical-align: middle;
 	}
 

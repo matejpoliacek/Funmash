@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 from funmash_app.models import Image, UserProfile
 
 
-from funmash_app.forms import UserForm, ImageForm
+from funmash_app.forms import UserForm
 ## TODO plus ImageForm
 
 from random import randint
@@ -41,44 +41,24 @@ def index(request):
 
     return render(request, 'funmash_app/index.html', context=context_dict)
 
-# experimenting with how images are passed - modified urls as well (added index2)
-
-# TODO index 2 has to redirect to a new view that midifies the image
-# image 2 will redirect and process_image_source and pass it to index
-
-
-
-def index2(request, image_name):
-    image = Image.objects.get(name=image_name)
-    image.ranking = image.ranking + 1
-    image.save()
-
-    return index(request)
-
-# INDEX BACKUP:
-# def index(request):
-#   context_dict = {}
-# return render(request, 'funmash_app/index.html', context=context_dict)
-
-
 
 def about(request):
     return render(request, 'funmash_app/about.html')
 
 
-def change_password(request):
-    return render(request, 'funmash_app/change_password.html')
-
-def add_img(name,source,ranking):
+# helper method to create objects in the database
+def add_img(name,source,ranking, ownerName):
     img = Image.objects.get_or_create(name=name)[0]
     img.source = source
     img.ranking = ranking
+    img.owner = ownerName
     img.save()
     return img
 
 
 @login_required
 def profile(request):
+    username = request.user.username
     if request.method == 'POST':
         images = Image.objects.all()
         numOfNext = len(images) + 1
@@ -86,26 +66,33 @@ def profile(request):
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()
         filename = fs.save(nameOfNext, myfile)
-        img = add_img(str(numOfNext), settings.MEDIA_URL + nameOfNext, 0)
-        print(img.name)
+        img = add_img(str(numOfNext), settings.MEDIA_URL + nameOfNext, 0, username)
+        print(username)
         return HttpResponse(0)
-    if request.method == 'GET':
-        return render(request, 'funmash_app/profile.html')
 
+    if request.method == 'GET':
+        context_dict = {}
+        user_images = []
+        #need to reverse this order -->
+        user_images = (Image.objects.filter(owner=username))
+
+        context_dict['user_images1'] = user_images[0:3]
+        context_dict['user_images2'] = user_images[3:6]
+        return render(request, 'funmash_app/profile.html', context_dict)
+
+
+def uploaded(request):
+    username = request.user.username
+    if request.method == 'GET':
+        context_dict = {}
+        user_images = []
+        user_images = (Image.objects.filter(owner=username))
+        context_dict['user_images1'] = user_images[0:3]
+        context_dict['user_images2'] = user_images[3:6]
+        return render(request, 'funmash_app/uploaded.html', context_dict)
 
 def top5(request):
     return render(request, 'funmash_app/top5.html')
-
-def upload_pic(request):
-    form = ImageForm
-    if request.method == 'POST':
-        form = ImageForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save(commit=True)
-            return index(request)
-        else:
-            print(form.errors)
-    return render(request, 'funmash_app/profile.html', {'form': form})
 
 
 def like_picture(request):
@@ -123,7 +110,7 @@ def like_picture(request):
 
         return HttpResponse(0)
 
-
+# Render part of html template which contains the first image
 def render_pic1(request):
     if request.method == 'GET':
         context_dict = {}
@@ -136,6 +123,8 @@ def render_pic1(request):
 
         return render(request, 'funmash_app/render_pic1.html', context=context_dict)
 
+# Render part of html template which contains the first image
+# Includes check to make sure the two images are not the same
 def render_pic2(request):
     if request.method == 'GET':
         pic_name = request.GET['picture_name']
@@ -156,19 +145,3 @@ def render_pic2(request):
 
         return render(request, 'funmash_app/render_pic2.html', context=context_dict)
 
-
-
-
-
-# def addIssue(request):
-#     if request.method == 'POST':
-#         issue_form = IssueForm(request.POST, request.FILES)
-#         if issue_form.is_valid():
-#             issue = issue_form.save(commit=False)
-#             issue.save()
-#         else:
-#             print(issue_form.errors)
-#
-#     issue_form = IssueForm()
-#
-#     return render(request, 'fixit/addIssue.html', {'issue_form': issue_form})

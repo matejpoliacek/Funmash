@@ -13,7 +13,9 @@ $(document).ready(function (e) {
             success:function(data){
                 console.log("success");
                 console.log(data);
-				
+				$.get('/funmash_app/uploaded/', {}, function(data) {
+					$('#uploaded').html(data);
+			});
 				
             },
             error: function(data){
@@ -31,5 +33,9 @@ $(document).ready(function (e) {
 	
 	$('#input_pic').on('change', function(e) {
 		document.getElementById("ifsuccess").innerHTML = "";
+	});
+	
+	$('#next').click(function() {
+		
 	});
 });

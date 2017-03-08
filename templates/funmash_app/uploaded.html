@@ -1,0 +1,14 @@
+<tr>
+{% if user_images1 %}
+	{% for image in user_images1 %}
+		<td><img src="{{ image.source }}"> </td>
+	{% endfor %}
+	</tr>
+	<tr>
+	{% for image in user_images2 %}
+		<td><img src="{{ image.source }}"> </td>
+	{% endfor %}
+{% else %}
+	<td><p>You should upload some images!</td>
+{% endif %}
+</tr>

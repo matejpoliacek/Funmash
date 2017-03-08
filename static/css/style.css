@@ -57,6 +57,9 @@ a  {
 
 .panel	li {
     	float: right;
+		outline: 2px solid #BD0000;
+		border-radius: 4px;
+		
 	}
 
 .panel	li a {

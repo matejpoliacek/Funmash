@@ -46,42 +46,9 @@
 		<div class="form">
 		<p id="firsttext">Submit an image to the mash pit</>
 		<p id="secondtext">Add new image</p>
-	
-
-			<form id ="image_form" method="POST" action="{% url 'profile' %}"  enctype="multipart/form-data">
-				{% csrf_token %}
-			Image name: <input type="file" name="name" accept="image/*" value="" size="50" />
-			{{ form.as_p }}
-			<br/>
-			<input type="submit"/>
-			</form>
 		
 		</div>
-		</section>
-		<section>
-
-		<div>
-		<p>Your submissions</p>
 		
-		<table class="imagescontainer">
-		<tr>
-		
-			<td>
-				<img src="/media/1.jpg"> </td>
-			<td><img src="/media/2.jpg"> </td>
-			<td><img src="/media/3.jpg"> </td>
-		</tr>
-		<tr>
-			<td><img src="/media/4.jpg"> </td>
-			<td><img src="/media/5.jpg"> </td>
-		</tr>
-		</table>
-		</div>
-		
-		</section>
-		<script src="{% static "js/funmash-ajax-profile.js" %}">		
-		</script>
-		</section>
 		<div id="upload_pic">
 		<form id="imageUploadForm" method="post" enctype="multipart/form-data">
 		{% csrf_token %}
@@ -90,6 +57,38 @@
 		<p id="ifsuccess"></p>
 		</form>
 		</div>
+		
+		</section>
+		<section>
+
+		<div>
+		<p>Your submissions</p>
+		
+		<table class="imagescontainer" id="uploaded" last_pic="">
+		<tr>
+		
+		{% if user_images1 %}
+			{% for image in user_images1 %}
+				<td><img src="{{ image.source }}"> </td>
+			{% endfor %}
+			</tr>
+			<tr>
+			{% for image in user_images2 %}
+				<td><img src="{{ image.source }}"> </td>
+			{% endfor %}
+		{% else %}
+			<td><p>You should upload some images!</td>
+		{% endif %}
+		</tr>
+		</table>
+		<button id="next">Next</button>
+		</div>
+		
+		</section>
+		<script src="{% static "js/funmash-ajax-profile.js" %}">		
+		</script>
+		</section>
+
 
 {% endblock %}
  
