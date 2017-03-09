@@ -1,4 +1,4 @@
-% extends 'funmash_app/base.html' %}
+{% extends 'funmash_app/base.html' %}
 {% load staticfiles %}
 
 
@@ -6,8 +6,17 @@
 	Funmash - top 5
 {% endblock %}
 
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/top5.css' %}" />
+{% endblock %}
+
 {% block body_block %}
 	
 	<h1>Top 5</h1>
-
+	<div class="topimages">
+	{% for image in topImages %}
+		<img class="topImg" src="{{ image.source }}">
+	{% endfor %}
+	</div>
+	
 {% endblock %}

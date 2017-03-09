@@ -165,8 +165,11 @@ def previous_pic(request):
         context_dict['numOfFirstImage'] = first_image
         return render(request, 'funmash_app/uploaded.html', context_dict)
 
+
 def top5(request):
-    return render(request, 'funmash_app/top5.html')
+    image_list = Image.objects.order_by('-ranking')[:5]
+    context_dict = {'topImages': image_list }
+    return render(request, 'funmash_app/top5.html', context = context_dict)
 
 
 def like_picture(request):
@@ -218,4 +221,3 @@ def render_pic2(request):
         context_dict = {'secondImage': secondImage}
 
         return render(request, 'funmash_app/render_pic2.html', context=context_dict)
-
