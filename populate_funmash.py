@@ -11,6 +11,7 @@ from django.conf import settings
 
 def populate():
     images = {}
+    #change if you want to add all pictures
     for x in range(1,15):
         id = str(x) + ".jpg"
         #The one line below is these three lines combined:
