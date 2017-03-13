@@ -1,4 +1,7 @@
+
 img.topImg {
+		display: block;
+		margin: auto;
 		height: 450px;
 		width: auto;
 		vertical-align: middle;

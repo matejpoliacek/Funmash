@@ -7,6 +7,29 @@ a  {
 	text-decoration: none;
 	
 }
+
+h1 {
+	text-shadow: 2px 2px 24px rgba(150, 150, 150, 1);
+}
+
+.headertext {
+	text-align: center;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	
+	font-style: normal;
+	font-variant: normal;
+	
+	
+	
+	color:#9b1304;
+		
+		
+	display: block;
+
+	text-align: center;	
+	padding: 16px;
+	text-decoration: none;
+}
 	
 .logo {
 	padding-left: 50px;

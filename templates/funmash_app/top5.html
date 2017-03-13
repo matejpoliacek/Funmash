@@ -12,11 +12,11 @@
 
 {% block body_block %}
 	
-	<h1>Top 5</h1>
+	<h1 class="headertext">Top 5 Highest Rated Images</h1>
 	<div class="topimages">
-	{% for image in topImages %}
-		<img class="topImg" src="{{ image.source }}"><br>
-	{% endfor %}
+		{% for image in topImages %}
+			<img class="topImg" src="{{ image.source }}"><br>
+		{% endfor %}
 	</div>
 	
 {% endblock %}

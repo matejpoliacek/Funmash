@@ -6,4 +6,10 @@ var getImageName = function() {
 	}
 }
 
-getImageName();
+function popup() {
+       //var image = getImageName(); //$(this).attr('src');
+        w2popup.open({
+            title: 'Image',
+            body: '<div class="w2ui-centered"><img src="'+getImageName()+'"></img></div>'
+        });
+    }

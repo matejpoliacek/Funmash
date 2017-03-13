@@ -1,7 +1,7 @@
 img.image {
 		display:inline-block;
-		height: 450px;
-		width: auto;
+		height: auto;
+		width: 40%;
 		vertical-align: middle;
 	}
 
@@ -14,3 +14,10 @@ img.image {
 	overflow: hidden;
 }
 
+#cimg1 {
+	padding-left: 10%;
+}
+
+#cimg2 {
+	padding-left: 10%;
+}
