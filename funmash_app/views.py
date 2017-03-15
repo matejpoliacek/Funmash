@@ -67,25 +67,20 @@ def profile(request):
 
         #check if we need to run the loop, i.e. if thre is a discrepancy between
         #the number of images in database and the last filename
-        if (images[len(images) - 1]) != len(images):
-            print("trigger")
+        if (images[len(images) - 1].name) != len(images):
             for i in range(0, len(images)):
                 test_name = i+1
-                print(test_name)
-                print(int(images[i].name))
 
                 if test_name != int(images[i].name):
                     numOfNext = test_name
-                    print("all the way")
                     break
 
-        print(numOfNext)
         nameOfNext = str(numOfNext) + ".jpg"
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()
         filename = fs.save(nameOfNext, myfile)
         img = add_img(str(numOfNext), settings.MEDIA_URL + nameOfNext, 0, username)
-        print(username)
+
         return HttpResponse(0)
 
     if request.method == 'GET':

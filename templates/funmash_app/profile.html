@@ -56,7 +56,7 @@
 		{% csrf_token %}
 		<input type="file" name="myfile" id="input_pic">
 		<button type="submit">Upload</button>
-		<p id="ifsuccess"></p>
+		<div id="fade"><p id="ifsuccess"></p></div>
 		</form>
 		</div>
 		
@@ -86,8 +86,8 @@
 		{% endif %}
 		</tr>
 		</table>
-		<button id="next">Next</button>
-		<button id="previous">Previous</button>
+		<button id="previous"><-- Next</button>
+		<button id="next">Previous --></button>		
 		</div>
 		
 		</section>
