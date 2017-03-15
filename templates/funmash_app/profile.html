@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title_block %}
-	{{ selecteduser.username }} Profile
+	{{ username }} Profile
 	
 {% endblock %}
 {% block styles %}
@@ -17,7 +17,7 @@
 		<div class="toppanel">
 		<div id="username">
 		<br>
-		{{ selecteduser.username }} Profile
+		{{ username }} Profile
 		 </div>
 		 {% if selecteduser.username == user.username %}
 		 	<form method="post" action="." enctype="multipart/form-data">
@@ -27,7 +27,7 @@
 		 	</form>
 		 {% endif %}
 		
-		 	<button href="{% url 'auth_logout' %}?next=/funmash_app/">Logout</button>
+		 	<button><a href="{% url 'auth_logout' %}?next=/funmash_app/">Logout</a></button>
 		
 		
 		</div>
