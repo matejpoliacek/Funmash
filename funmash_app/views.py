@@ -61,7 +61,25 @@ def profile(request):
     username = request.user.username
     if request.method == 'POST':
         images = Image.objects.all()
+        images = images.extra(select={'name': 'CAST(name AS INTEGER)'}).extra(order_by = ['name'])
+
         numOfNext = len(images) + 1
+
+        #check if we need to run the loop, i.e. if thre is a discrepancy between
+        #the number of images in database and the last filename
+        if (images[len(images) - 1]) != len(images):
+            print("trigger")
+            for i in range(0, len(images)):
+                test_name = i+1
+                print(test_name)
+                print(int(images[i].name))
+
+                if test_name != int(images[i].name):
+                    numOfNext = test_name
+                    print("all the way")
+                    break
+
+        print(numOfNext)
         nameOfNext = str(numOfNext) + ".jpg"
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()

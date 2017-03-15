@@ -9,7 +9,7 @@ from django.conf import settings
 class Image(models.Model):
 
     # name of image in filesysem, serves as unique ID
-    name = models.CharField(primary_key=True, max_length=255, default="placeholder_name")
+    name = models.IntegerField(primary_key=True, default="placeholder_name")
 
     # filepath in filesystem
     source = models.CharField(max_length=255, default="")
