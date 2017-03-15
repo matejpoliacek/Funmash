@@ -101,4 +101,9 @@ h1 {
     	text-align: center;	
     	padding: 16px;
     	text-decoration: none;
-	}		
+	}
+
+img {
+   padding:1px;
+   border:1px solid #021a40;
+}	

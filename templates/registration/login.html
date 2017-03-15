@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block body_block %}
-	<h1>Login to Funmash</h1>
+	<h1 class="headertext">Login to Funmash</h1>
 	<form method="post" action=".">
 		{% csrf_token %}
 		{{ form.as_p }}
