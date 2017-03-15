@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 
 from funmash_app.models import Image, UserProfile
-
+import os
+from django.core.exceptions import ValidationError
 
 from funmash_app.forms import UserForm
 ## TODO plus ImageForm
@@ -76,12 +77,26 @@ def profile(request):
                     break
 
         nameOfNext = str(numOfNext) + ".jpg"
+       
         myfile = request.FILES['myfile']
-        fs = FileSystemStorage()
-        filename = fs.save(nameOfNext, myfile)
-        img = add_img(str(numOfNext), settings.MEDIA_URL + nameOfNext, 0, username)
+        extension = os.path.splitext(myfile.name)[1]
+        extension = extension.lower()
+        print extension
 
+
+
+        if extension == ".jpg":
+
+            fs = FileSystemStorage()
+            filename = fs.save(nameOfNext, myfile)
+            img = add_img(str(numOfNext), settings.MEDIA_URL + nameOfNext, 0, username)
+            print(username)
+
+        else:
+            raise ValidationError("Unsupport image type. Please upload jpeg")
         return HttpResponse(0)
+		
+       
 
     if request.method == 'GET':
         context_dict = {}
