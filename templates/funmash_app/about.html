@@ -1,13 +1,37 @@
 {% extends 'funmash_app/base.html' %}
 {% load static %}
 
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}" />
+{% endblock %}
+
 {% block title_block %}
 	About FunMash
 {% endblock %}
 
 {% block body_block %}
-	<h1 class="headertext">About FunMash</h1>
-		<div>
-			<!-- some info about us here -->
-		</div>	
+<div class="bg">
+	<h1 class="about_header">About Funmash</h1>
+
+			<div class="about">
+			
+				<p class="p1">
+					Tired of scrolling through images? Just click the one you find funnier - and surprise yourself with what comes next. <br/>
+				</p>
+					
+				<p class="p2">
+					Registering with your email address lets you see which images were rated as the funniest.
+				</p>
+				
+				<p class="p3">
+					Upload your own images and be recognised for your exceptional sense of humour!
+				</p>
+				
+				<p class = "p4">
+					For feedback and latest statistics, feel free to email <br/><a href="mailto:1103086v@student.gla.ac.uk">the Funmash team</a>
+				</p>
+					
+			</div>	
+	<br/>
+</div>
 {% endblock %}
