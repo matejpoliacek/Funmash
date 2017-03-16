@@ -15,24 +15,29 @@ $(document).ready(function (e) {
                 console.log(data);
 				$.get('/funmash_app/uploaded/', {}, function(data) {
 					$('#uploaded').html(data);
+					document.getElementById("ifsuccess").innerHTML = "succesfuly uploaded!";
+					
+				
 			});
 				
             },
             error: function(data){
                 console.log("error");
                 console.log(data);
+				
             },
 			
         });
-		document.getElementById("ifsuccess").innerHTML = "succesfuly uploaded!";		
+			
     }));
 
     $("#ImageBrowse").on("change", function() {
         $("#imageUploadForm").submit();
+		
     });
 	
 	$('#input_pic').on('change', function(e) {
-		document.getElementById("ifsuccess").innerHTML = "";
+		
 	});
 	
 	$('#next').on('click',function(e) {

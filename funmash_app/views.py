@@ -83,19 +83,22 @@ def profile(request):
         extension = os.path.splitext(myfile.name)[1]
         extension = extension.lower()
         print extension
-
-
-
+		
+		
+	
+	
         if extension == ".jpg":
 
             fs = FileSystemStorage()
             filename = fs.save(nameOfNext, myfile)
             img = add_img(str(numOfNext), settings.MEDIA_URL + nameOfNext, 0, username)
             print(username)
-
+	
         else:
             raise ValidationError("Unsupport image type. Please upload jpeg")
-        return HttpResponse(0)
+	#return HttpResponse(status=404)
+	return HttpResponse(0)
+        
 		
        
 
