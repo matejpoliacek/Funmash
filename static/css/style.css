@@ -31,14 +31,21 @@ h1 {
 }
 	
 .logo {
-
+	transition-duration: 0.4s;
+	border-radius: 10px;
 	padding-left: 50px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	background-color: #bc2800;
-	outline: 5px solid #BD0000;
+	/*outline: 5px solid #BD0000;*/
+	box-shadow: 0 0 0 4pt #BD0000;
 	max-width: 350px;
 	margin-left: 20px
+	
+}
+
+.logo:hover {
+	box-shadow: 0 0 5pt 4pt #BD0000;
 }
 	
 .logo	h1 {
@@ -64,7 +71,7 @@ h1 {
 }
 
 .panel {
-
+	border-radius: 5px;
 	background-color: #BD0000;
 	margin-top: -95px;
 	margin-left: 420px;

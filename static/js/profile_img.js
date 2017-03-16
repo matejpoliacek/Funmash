@@ -1,3 +1,14 @@
+var imgs = document.getElementsByTagName('img');
+
+        // Default: Bubbling
+        for(var i=0; i<imgs.length; i++) {
+          imgs[i].addEventListener("click", doSomething);
+        }
+		
+		function doSomething() {
+            alert(this.className);
+        }
+
 var getImageName = function() {
 	document.onclick = function(e) {
 		if (e.target.tagName == 'IMG') {
@@ -6,7 +17,7 @@ var getImageName = function() {
 	}
 }
 
-function popup() {
+function zpopup() {
        //var image = getImageName(); //$(this).attr('src');
         w2popup.open({
             title: 'Image',
