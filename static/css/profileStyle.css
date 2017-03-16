@@ -3,7 +3,7 @@ body {
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	font-style: normal;
 	font-variant: normal;
-	color:#000000;
+	
 	}
 .toppanel {
 	float: center;
@@ -14,7 +14,10 @@ body {
   
   width: 100px;
 }
-
+#logout 
+{
+	float: center;
+}
 
 
 .time p {
@@ -46,8 +49,10 @@ body {
 	float: center;
 }
 .mainsection section {
-	width: 50%;
-	float: left;
+	width: 75%;
+	
+	float: center;
+	
 }
 .imagescontainer table {
 	width: 100%;

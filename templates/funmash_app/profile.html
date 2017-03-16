@@ -12,25 +12,19 @@
 <script src="{% static "js/profile_img.js" %}"></script>		
 
 {% block body_block %}
+<h1 class="headertext"> 
+	{% if user.is_authenticated %}
+			{{ user.username }} Profile
+	{% endif %}
+</h1>
+
+<div class="mainsection">
 	<section class="mainsection">
-	<section>
+	
 		<div class="toppanel">
-		<div id="username">
-		<br>
-		{{ username }} Profile
-		 </div>
-		 {% if selecteduser.username == user.username %}
-		 	<form method="post" action="." enctype="multipart/form-data">
-		 	{% csrf_token %}
-		 	{{ form.as_p }}
-		 	<input type="submit" value="Update" />
-		 	</form>
-		 {% endif %}
 		
-		 	<button><a href="{% url 'auth_logout' %}?next=/funmash_app/">Logout</a></button>
-		
-		
-		</div>
+			<button><a href="{% url 'auth_logout' %}?next=/funmash_app/">Logout</a></button>
+	
 		<div class="time">
 		
 		<p>User since [x]</p>

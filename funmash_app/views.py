@@ -65,6 +65,7 @@ def profile(request):
         images = images.extra(select={'name': 'CAST(name AS INTEGER)'}).extra(order_by = ['name'])
 
         numOfNext = len(images) + 1
+		
 
         #check if we need to run the loop, i.e. if thre is a discrepancy between
         #the number of images in database and the last filename
@@ -77,7 +78,7 @@ def profile(request):
                     break
 
         nameOfNext = str(numOfNext) + ".jpg"
-       
+		
         myfile = request.FILES['myfile']
         extension = os.path.splitext(myfile.name)[1]
         extension = extension.lower()
