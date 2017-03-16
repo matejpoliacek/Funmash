@@ -4,80 +4,73 @@ body {
 	font-style: normal;
 	font-variant: normal;
 	
-	}
-.toppanel {
+}
+p {
+	font-style: italic;
+	
+	text-align: left;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	text-shadow: 2px 2px 24px rgba(150, 150, 150, 1);
+	color:#9b1304;	
+	display: block;
+	padding: 16px;
+	text-decoration: none;
+}
+#wrapper {
+	width: 80%;
 	float: center;
 }
-#username
-{
-  display:inline-block;
-  
-  width: 100px;
+
+.sideBar {	
+	float: left;
+	width: 100px;
+	padding-left: 12px;
 }
-#logout 
-{
-	float: center;
+.sideBar  a {
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	color: #BD0000;	
+	display: block;
+    text-align: left;	
+    padding: 16px;
+	text-decoration: none;
 }
-
-
-.time p {
-	
-
-	color: #A9A9A9;
-	font-size: 12px;
-
+.uploadform {
+	float: left;
+	width: 500px;
+	padding-left: 120px;
+	padding-top: 50px;
 }
-.changePassword a {
-	font-size: 12px;
-	padding-bottom: 12px;
-
-	
+#firsttext{
+	font-size: 24px;
 }
-
-.top5button a {
-	position: relative;
-	left: 100px;
+#secondtext {
 	font-size: 16px;
-	color: red;
- padding: 2px 12px 2px 12px; 
-  border-top: 1px solid #000000;
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #000000;
-  border-left: 1px solid #000000;
 }
-.mainsection {
-	float: center;
-}
-.mainsection section {
-	width: 75%;
-	
-	float: center;
-	
-}
+.submissions {
+	float: right;
+	width: 500px;
+ }
+.submissions p {
+	font-size: 20px;
+ }
+
+
 .imagescontainer table {
 	width: 100%;
 }
-
 .imagescontainer td {
-	padding: 10px;
-	
+	padding: 10px;	
 }
 .imagescontainer img {
 	width: 75px;
 	height: 75px;
 }
-.form  {
-	float: center;
-	
-}
-#firsttext {
-	font-weight: bold;
-	font-size: 16px;
-}
-#secondtext {
-	font-style: italic;
-	font-size: 12px;
-}
+
+
 
 
 

@@ -18,48 +18,26 @@
 	{% endif %}
 </h1>
 
-<div class="mainsection">
-	<section class="mainsection">
-	
-		<div class="toppanel">
-		
-			<button><a href="{% url 'auth_logout' %}?next=/funmash_app/">Logout</a></button>
-	
-		<div class="time">
-		
-		<p>User since [x]</p>
-		</div>
-		<div class="changePassword">
-		<a href="{%  url 'auth_password_change' %}">Change password</a></div>
-
-
-		<div class="top5button">
-		<br>
-		<a href="{% url 'top5' %}">View Top Images</a>
-		</div>
-
-		
-		<div class="form">
-		<p id="firsttext">Submit an image to the mash pit</>
-		<p id="secondtext">Add new image</p>
-		
-		</div>
-		
-		<div id="upload_pic">
+<div id="wrapper">
+	<div class="sideBar">	
+		<a href="{% url 'auth_logout' %}?next=/funmash_app/">Logout</a>
+		<a href="{%  url 'auth_password_change' %}">Change password</a>
+		<a href="{% url 'top5' %}">View Top Images</a>		
+	</div>
+<div class="uploadform">
+	<p id="firsttext">Submit an image to the mash pit</>
+	<p id="secondtext">Add new image</p>
 		<form id="imageUploadForm" method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 		<input type="file" name="myfile" id="input_pic">
 		<button type="submit">Upload</button>
 		<div id="fade"><p id="ifsuccess"></p></div>
 		</form>
-		</div>
 		
-		</section>
-		<section>
-
-		<div>
-		<p>Your submissions</p>
-		
+</div>	
+	
+<div class="submissions">
+	<p>Your submissions</p>
 		<table class="imagescontainer" id="uploaded" >
 		<!-- numOfPicLast is index of last picture + 1, numOfPicFirst is index of first picture -->
 		<!-- so basically when pressed next numOfPicLast becomes numOfPicFirst -->
@@ -82,12 +60,13 @@
 		</table>
 		<button id="previous"><-- Next</button>
 		<button id="next">Previous --></button>		
-		</div>
+</div>
+</div>
 		
-		</section>
+
 		<script src="{% static "js/funmash-ajax-profile.js" %}">		
 		</script>
-		</section>
+		
 
 
 {% endblock %}
