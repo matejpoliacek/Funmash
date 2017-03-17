@@ -3,7 +3,6 @@
 
 {% block title_block %}
 	{{ username }} Profile
-	
 {% endblock %}
 {% block styles %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/profileStyle.css' %}" />
@@ -17,13 +16,15 @@
 			{{ user.username }} Profile
 	{% endif %}
 </h1>
-
-<div id="wrapper">
-	<div class="sideBar">	
+	<div id="mySideBar" class="sideBar">	
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<a href="{% url 'auth_logout' %}?next=/funmash_app/">Logout</a>
 		<a href="{%  url 'auth_password_change' %}">Change password</a>
 		<a href="{% url 'top5' %}">View Top Images</a>		
+	
 	</div>
+<span id="open" onclick="openNav()">Options</span>	
+<div id="main">
 <div class="uploadform">
 	<p id="firsttext">Submit an image to the mash pit</>
 	<p id="secondtext">Add new image</p>
@@ -35,7 +36,7 @@
 		</form>
 		
 </div>	
-	
+
 <div class="submissions">
 	<p>Your submissions</p>
 		<table class="imagescontainer" id="uploaded" >
@@ -61,13 +62,12 @@
 		<button id="previous"><-- Next</button>
 		<button id="next">Previous --></button>		
 </div>
+
 </div>
 		
-
-		<script src="{% static "js/funmash-ajax-profile.js" %}">		
+		<script src="{% static "js/funmash-ajax-profile.js" %}">
 		</script>
-		
-
+	
 
 {% endblock %}
  

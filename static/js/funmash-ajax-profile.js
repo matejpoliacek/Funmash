@@ -15,9 +15,8 @@ $(document).ready(function (e) {
                 console.log(data);
 				$.get('/funmash_app/uploaded/', {}, function(data) {
 					$('#uploaded').html(data);
-					document.getElementById("ifsuccess").innerHTML = "succesfuly uploaded!";
 					
-				
+					
 			});
 				
             },
@@ -28,7 +27,7 @@ $(document).ready(function (e) {
             },
 			
         });
-			
+		document.getElementById("ifsuccess").innerHTML = "succesfuly uploaded!";
     }));
 
     $("#ImageBrowse").on("change", function() {

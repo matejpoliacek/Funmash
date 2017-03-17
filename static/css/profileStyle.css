@@ -7,7 +7,7 @@ body {
 }
 p {
 	font-style: italic;
-	
+	color:#f7efdc;
 	text-align: left;
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	font-style: normal;
@@ -18,25 +18,71 @@ p {
 	padding: 16px;
 	text-decoration: none;
 }
-#wrapper {
-	width: 80%;
-	float: center;
-}
 
+/* Navigation sidebar */
 .sideBar {	
-	float: left;
-	width: 100px;
-	padding-left: 12px;
+	height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+
 }
+#open {
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	color: #BD0000;
+	font-size: 22px;
+	text-align: left;
+	font-style: normal;
+	font-variant: normal;
+	text-shadow: 2px 2px 24px rgba(150, 150, 150, 1);	
+	display: block;
+	padding: 16px;
+	text-decoration: none;
+}
+/* Links on side bar */
 .sideBar  a {
+	padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	font-style: normal;
 	font-variant: normal;
 	color: #BD0000;	
-	display: block;
-    text-align: left;	
-    padding: 16px;
-	text-decoration: none;
+}
+/*  Change color of links when you hover over them */
+.sideBar  a:hover, .offcanvas a:focus {
+	color: #000000;
+}
+/* Style of close bar */
+.sideBar .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+/* Push page content to the right when opening side bar */
+#main {
+	
+	transition: margin-left .5s;
+	padding: 20px;
+	width: 80%;
+	float: center;
+	
+}
+/* Resize  side bar on smaller windows */	
+@media screen and (max-height: 450px) {
+	.sideBar {padding-top: 15px;}
+	.sideBar a {font-size: 18px; }
 }
 .uploadform {
 	float: left;
@@ -53,6 +99,7 @@ p {
 .submissions {
 	float: right;
 	width: 500px;
+	
  }
 .submissions p {
 	font-size: 20px;
@@ -60,6 +107,7 @@ p {
 
 
 .imagescontainer table {
+	
 	width: 100%;
 }
 .imagescontainer td {
