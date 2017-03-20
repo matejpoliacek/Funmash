@@ -1,8 +1,35 @@
 {% extends "funmash_app/base.html" %} 
 {% block body_block %}
-	<h1 class="headertext">Register Here</h1>
-	<form method="post" action="."> 
-		{% csrf_token %} 	{{ form.as_p }}
-		<input type="submit" value="Submit" />
-	</form> 
+
+<link href="http://v4-alpha.getbootstrap.com/examples/signin/signin.css"
+rel="stylesheet">
+<div class="jumbotron">
+	<h1 class="display-3">Register</h1>
+</div>
+	
+<form class="form-signin" role="form" method="post" action=".">
+		{% csrf_token %}
+		<h2 for="form-siginin-heading">Please Register</h2>
+		<label for="inputUsername" class="sr-only">Username</label>
+		<input type="text" name="username" id="id_username" class="form-control"
+			placeholder="Username" required autofocus>
+			<span class="helptext">
+			Required. 30 characters or fewer. 
+			</span>
+		<label for="inputEmail" class="sr-only">Email</label>
+		<input type="text" name="email" id="id_email" class="form-control" 
+			placeholder="Email" required>
+		
+			
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input type="password" name="password" id="id_password" class="form-control" 
+			placeholder="Password" required>
+		
+		<label for="inputPassword2" class="sr-only">Password Confirmation</label>
+		<input type="password" name="password2" id="id_password2" class="form-control" 
+			placeholder="Password2" required >
+			
+		<button class="btn btn-lg btn-primary btn-block" type="submit"
+			value="Submit" />Sign Un</button>
+</form>
 {% endblock %}
