@@ -107,7 +107,7 @@ h1 {
     text-decoration: none;
 	}
 
-img {
+img.image {
    padding:1px;
    border:1px solid #021a40;
    min-width: 10%;
