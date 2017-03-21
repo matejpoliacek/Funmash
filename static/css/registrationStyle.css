@@ -1,7 +1,8 @@
 body {
-	background-color: #ffe29b;
+	background-color: #fffdf4;
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	color: #9b1304;
+	padding-top: 0px;
 }
 
 .form-signin h2 {
