@@ -110,6 +110,9 @@ h1 {
 img {
    padding:1px;
    border:1px solid #021a40;
+   min-width: 10%;
+   max-width: 20%;
+   height:auto;
 }	
 
 ul li:hover {
@@ -126,12 +129,15 @@ ul li a:hover {
 	 color: #BD0000;
 
 }
-*/
-footer {
+
+.footer {
 	text-align: center;
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;	
 	font-style: normal;
 	font-variant: normal;
-	position: relative;
-	line-height: 15px;
-}/*
+	/*	line-height: 15px; */
+	left: 50%;
+	position: fixed;
+bottom: 5%;
+
+}

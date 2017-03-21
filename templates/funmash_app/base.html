@@ -17,9 +17,6 @@
 		{% block styles %}
 		{% endblock %}
 	</head>
-	
-			
-	<!-- In the later version, this block will be modified  show login form in the top - or username if the user is registered. For now we can put in a link to registration -->
 
 <a href = "{% url 'index' %}">
 	<div class="logo">
@@ -40,8 +37,8 @@
 			<li><a href="{% url 'registration_register' %}">Register</a></li>
 			<li><a href="{% url 'auth_login' %}">Login</a></li>
 		{% endif %}
-			<li><a href= "{% url 'index' %}">Home</a></li>
 			<li><a href="{% url 'about' %}">About</a></li>
+			<li><a href= "{% url 'index' %}">Home</a></li>
 		</ul>
 		
 		<!--	<div style="background-color: #FF7F50">
@@ -58,10 +55,10 @@
 		{% block body_block %}
 			Body block
 		{% endblock %}
+		
+		<div class="footer">
+			<br/>&copy; Funmash 2017
+		</div>
 </body>
-<!--
-<footer>
-	<br/>
-	&copy; Funmash 2017
-</footer> -->
+
 </html>

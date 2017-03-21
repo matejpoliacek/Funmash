@@ -13,7 +13,7 @@
 {% block body_block %}
 <h1 class="headertext"> 
 	{% if user.is_authenticated %}
-			{{ user.username }} Profile
+			Hi {{ user.username }} !
 	{% endif %}
 </h1>
 	<div id="mySideBar" class="sideBar">	
@@ -59,8 +59,8 @@
 		{% endif %}
 		</tr>
 		</table>
-		<button id="previous"><-- Next</button>
-		<button id="next">Previous --></button>		
+		<button id="next"><-- Previous</button>		
+		<button id="previous">Next --></button>
 </div>
 
 </div>

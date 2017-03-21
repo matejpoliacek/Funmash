@@ -13,6 +13,9 @@ img.image {
 	border-spacing: 10px;
 	border-collapse: separate;
 	overflow: hidden;
+	width:100%;
+	position: relative;
+	text-align: center;
 }
 
 #cimg1 {
