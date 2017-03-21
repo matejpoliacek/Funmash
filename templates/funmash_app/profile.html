@@ -1,3 +1,4 @@
+
 {% extends 'funmash_app/base.html' %}
 {% load staticfiles %}
 
@@ -20,14 +21,20 @@
 </h1>
 	<div id="mySideBar" class="sideBar">	
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<br>
+		<br>
 		<a href="{% url 'auth_logout' %}?next=/funmash_app/">Logout</a>
 		<a href="{%  url 'auth_password_change' %}">Change password</a>
 		<a href="{% url 'top5' %}">View Top Images</a>		
 	
 	</div> 
-<span id="open" onclick="openNav()">Options</span>	
+
 <div id="main">
+
 <div class="uploadform">
+<div >
+<button class="button"onclick="openNav()"><span>Options  </span></button>
+</div>	
 	<p id="firsttext">Submit an image to the mash pit</>
 	<p id="secondtext">Add new image</p>
 		<form id="imageUploadForm" method="post" enctype="multipart/form-data">
@@ -63,6 +70,10 @@
 		</table>
 		<button id="next"><-- Previous</button>		
 		<button id="previous">Next --></button>
+		<br>
+		<br>
+		<br>
+		
 </div>
 
 </div>

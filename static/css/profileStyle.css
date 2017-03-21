@@ -1,6 +1,7 @@
+
+
 body {
-
-
+	background-color:  #fffdf4;
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	font-style: normal;
 	font-variant: normal;
@@ -8,7 +9,6 @@ body {
 }
 p {
 	font-style: italic;
-	color:#f7efdc;
 	text-align: left;
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	font-style: normal;
@@ -22,6 +22,7 @@ p {
 
 /* Navigation sidebar */
 .sideBar {	
+	
 	height: 100%; 
     width: 0; 
     position: fixed; 
@@ -35,6 +36,7 @@ p {
 
 }
 #open {
+	
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	color: #BD0000;
 	font-size: 22px;
@@ -46,9 +48,11 @@ p {
 	padding: 16px;
 	text-decoration: none;
 }
+
 /* Links on side bar */
 .sideBar  a {
-	padding: 8px 8px 8px 32px;
+	
+	padding: 80px 8px 20px 8px;
     text-decoration: none;
     font-size: 25px;
     display: block;
@@ -60,24 +64,29 @@ p {
 }
 /*  Change color of links when you hover over them */
 .sideBar  a:hover, .offcanvas a:focus {
-	color: #000000;
+	color: #ffe29b;
 }
 /* Style of close bar */
 .sideBar .closebtn {
+	
 	position: absolute;
-	top: 0;
+	top: 0%;
 	right: 25px;
-	font-size: 36px;
+	font-size: 50px;
 	margin-left: 50px;
 }
-
 /* Push page content to the right when opening side bar */
 #main {
+	display: table;
+	margin: auto;
 	
+	border-collapse: separate;
 	transition: margin-left .5s;
 	padding: 20px;
-	width: 80%;
-	float: center;
+	width: 90%;
+	margin-right: 20%;
+	margin-left: 20%;
+	
 	
 }
 /* Resize  side bar on smaller windows */	
@@ -85,11 +94,58 @@ p {
 	.sideBar {padding-top: 15px;}
 	.sideBar a {font-size: 18px; }
 }
+.button {
+  display: inline-block;
+  border-radius: 4px; 
+  border: none;
+  color: #9b1304; 
+  box-shadow: 10px 10px 5px #9b1304;
+  background-color:#fffdf4;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+	padding-right: 25px;
+}
+
+.button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
 .uploadform {
-	float: left;
-	width: 500px;
+	display:inline-block;
+	width: 30%;
+	height: 90%;
+	vertical-align: middle;
+
 	padding-left: 120px;
 	padding-top: 50px;
+
+	padding-bottom: 40px;
+	box-shadow: 10px 10px 5px #9b1304; 
 }
 #firsttext{
 	font-size: 24px;
@@ -98,11 +154,19 @@ p {
 	font-size: 16px;
 }
 .submissions {
-	float: right;
-	width: 500px;
+	display:inline-block;
+	width: 30%;
+	height: 90%;
+	vertical-align: middle;
+	box-shadow: 10px 10px 5px #9b1304;
+	
+
+	padding-bottom: 80px;
+	
 	
  }
 .submissions p {
+	
 	font-size: 20px;
  }
 
@@ -118,7 +182,3 @@ p {
 	width: 75px;
 	height: 75px;
 }
-
-
-
-
