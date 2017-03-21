@@ -1,27 +1,73 @@
-img.image {
-		display:inline-block;
-		height: auto;
-		width: 40%;
-		vertical-align: middle;
-	}
-
-
-
-#bothimages {
+div#bothimages{
 	display: table;
 	margin: auto;
 	border-spacing: 10px;
 	border-collapse: separate;
 	overflow: hidden;
-	width:100%;
-	position: relative;
+	width: 90%;
+	position: center;
 	text-align: center;
+	background-color: #fff7e8;
+	margin-right: 5%;
+    margin-left: 5%;
+	border:1px solid #021a40;
+	box-shadow: 10px 10px 5px #9b1304;
 }
 
+div.imgdiv {
+	display:inline-block;
+	width: 45%;
+	height: 90%;
+	vertical-align: middle;
+
+}
+
+img.image {
+  
+	max-width: 80%;
+	max-height: 80%;
+  
+}
+   
 #cimg1 {
-	padding-left: 10%;
+	padding-left: 5%;
 }
 
 #cimg2 {
-	padding-left: 10%;
+	padding-left: 5%;
 }
+
+p.ownermsg {
+	font-weight:normal;
+	font-style:italic;
+	color:#BDBDBD;
+	letter-spacing:1pt;
+	word-spacing:2pt;
+	font-size:11px;
+	
+	font-family:verdana, sans-serif;
+	line-height:1;
+}
+
+p.ownermsgfail {
+	font-weight:normal;
+	font-style:italic;
+	color:#ff7a6b;
+	letter-spacing:1pt;
+	word-spacing:2pt;
+	font-size:11px;
+	
+	font-family:verdana, sans-serif;
+	line-height:1;
+}
+
+p#img1
+{
+	padding-left: 5%;
+}
+
+p#img2 {
+	padding-left: 5%;
+}
+
+

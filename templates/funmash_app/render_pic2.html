@@ -2,6 +2,11 @@
 		<span id="img2" number="{{ secondImage.name }}">			
 			<img class="image" src = "{{ secondImage.source }}" >
 		</span>
+		{% if user.is_authenticated %}
+			<p class="ownermsg" id="img2">Image uploaded by {{ firstImage.owner }}</p>
+		{% else %}
+			<p class="ownermsgfail" id="img2">Log in to see image owner</p>
+		{% endif %}
 	{% else %}
 		Second image is missing. FixIt!
 	{% endif %}

@@ -1,5 +1,5 @@
 body {
-	background-color: #ffe29b;
+	background-color: #fffdf4;
 	}
 
 	/* this will likely remove all underlines */
@@ -110,9 +110,6 @@ h1 {
 img.image {
    padding:1px;
    border:1px solid #021a40;
-   min-width: 10%;
-   max-width: 20%;
-   height:auto;
 }	
 
 ul li:hover {
@@ -120,7 +117,7 @@ ul li:hover {
 	height: 49px;
 	width: -1px;
 	border-radius: 4px;
-	background-color: white; /* Green */
+	background-color: white;
 
 }
 
