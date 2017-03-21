@@ -9,22 +9,51 @@ var imgs = document.getElementsByTagName('img');
             alert(this.className);
         }
 
-var getImageName = function() {
-	document.onclick = function(e) {
-		if (e.target.tagName == 'IMG') {
-			var image = e.target.getAttribute("src");
-		}
-	}
+function getImageName(element) {
+	var src = element.src;
+	return src;
 }
 
-function zpopup() {
+
+		
+
+function zpopup(img) {
        //var image = getImageName(); //$(this).attr('src');
+		var source = getImageName(img);
+		var newImg = document.createElement("img")
+		newImg.setAttribute('src', source);
+		console.log(newImg)
         w2popup.open({
             title: 'Image',
-            body: '<div class="w2ui-centered"><img src="'+getImageName()+'"></img></div>'
+            body: '<div class="w2ui-centered"><img class="popup" src="'+source+'"></img></div>',
+			width: getWidth(newImg),
+			height: getHeight(newImg)
         });
     }
 
+
+function getWidth(imgFile) {
+	var wdBody =  (window.innerWidth || document.body.clientWidth);
+	var wdImg = imgFile.naturalWidth * 1.05;
+	
+	if (wdBody > wdImg) {
+		return wdImg;
+	} else {
+		return wdBody;
+	}
+}
+
+function getHeight(imgFile) {
+	var hgBody = (window.innerHeight || document.body.clientHeight);
+	var hgImg = imgFile.naturalHeight * 1.1;
+	if (hgBody > hgImg) {
+		return hgImg;
+	} else {
+		return hgBody;
+	}
+}
+
+	
 
 	/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
 function openNav() {

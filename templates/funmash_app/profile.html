@@ -6,7 +6,9 @@
 {% endblock %}
 {% block styles %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/profileStyle.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/w2ui-1.5.rc1.css' %}" />
 <script src="{% static "js/profile_img.js" %}"></script>		
+<script src="{% static "js/w2ui-1.5.rc1.js" %}"></script>	
 {% endblock %}
 
 
@@ -47,12 +49,12 @@
 		
 		{% if user_images1 %}
 			{% for image in user_images1 %}
-				<td><img src="{{ image.source }}" > </td>
+				<td><img src="{{ image.source }}" onclick="zpopup(this);"> </td>
 			{% endfor %}
 			</tr>
 			<tr>
 			{% for image in user_images2 %}
-				<td><img src="{{ image.source }}" > </td>
+				<td><img src="{{ image.source }}" onclick="zpopup(this);"> </td>
 			{% endfor %}
 		{% else %}
 			<td><p>You should upload more images!</td>
