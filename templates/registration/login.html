@@ -4,23 +4,27 @@
 {% block title_block %}
 	Login
 {% endblock %}
-
-{% block body_block %}
+{% block styles %}
 <link href="http://v4-alpha.getbootstrap.com/examples/signin/signin.css"
 rel="stylesheet">
-<div class="jumbotron">
-	<h1 class="display-3">Login to Funmash</h1>
-</div>
-<form class="form-signin" role="form" method="post" action=".">
-		{% csrf_token %}
-		<h2 for="form-siginin-heading">Please sign in</h2>
-		<label for="inputUsername" class="sr-only">Username</label>
-		<input type="text" name="username" id="id_username" class="form-control"
-			placeholder="Username" required autofocus>
-		<label for="inputPassword" class="sr-only">Password</label>
-		<input type="password" name="password" id="id_password" class="form-control" 
-			placeholder="Password" required>
-		<button class="btn btn-lg btn-primary btn-block" type="submit"
-			value="Submit" />Sign in</button>
-</form>
+<link rel="stylesheet" type="text/css" href="{% static 'css/registrationStyle.css' %}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >	
 {% endblock %}
+{% block body_block %}
+<div class="container">
+	<form class="form-signin" role="form" method="post" action=".">
+		{% csrf_token %}
+		<h2 for="form-siginin-heading">Please Sign In</h2>
+		
+		<input type="text" name="username" id="id_username" class="form-control"
+			placeholder="Username" required/>
+		
+		<input type="password" name="password" id="id_password" class="form-control" 
+			placeholder="Password" required/> 
+		
+        
+			
+		<button type="submit" value="Submit" >Sign In</button>
+		<p>Not a member?  <a href="{% url 'registration_register' %}">Register</a></p>
+	</form>
+</div>
