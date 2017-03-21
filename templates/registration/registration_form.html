@@ -10,11 +10,11 @@ rel="stylesheet">
 {% endblock %}
 
 {% block body_block %}
-
+<h1 class="headertext">Register Here!</h1>
 	
 <form class="form-signin" role="form" method="post" action=".">
 		{% csrf_token %}
-		<h2 for="form-siginin-heading">Register Here!</h2>
+		
 		
 		<input type="text" name="username" id="id_username" class="form-control"
 			placeholder="Username" required autofocus>

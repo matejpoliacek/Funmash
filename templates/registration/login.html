@@ -11,10 +11,11 @@ rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" >	
 {% endblock %}
 {% block body_block %}
+<h1 class="headertext">Please Sign In</h1>
+
 <div class="container">
 	<form class="form-signin" role="form" method="post" action=".">
 		{% csrf_token %}
-		<h2 for="form-siginin-heading">Please Sign In</h2>
 		
 		<input type="text" name="username" id="id_username" class="form-control"
 			placeholder="Username" required/>
