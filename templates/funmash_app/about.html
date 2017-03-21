@@ -11,8 +11,8 @@
 {% endblock %}
 
 {% block body_block %}
+<h1 class="headertext">About Funmash</h1>
 <div class="bg">
-	<h1 class="headertext">About Funmash</h1>
 
 		<div class="about">
 			
@@ -33,7 +33,7 @@
 
 							Tell us what you think: <br>
 							<textarea name="content" id="content" rows="15" cols="50">I'm in love with your site!</textarea><br><br>
-					<button type="submit">Submit</button>
+					<button type="submit" id="leo">Submit</button>
 				</form>
 				{% endif %}
 	
@@ -42,7 +42,7 @@
 			<button id="open" class="button" onclick="openNav()"><span>Got feedback?</span></button>	
 			</div>
 			
-				<p class="p1">
+				<p class="p1" id="leotext">
 					Tired of scrolling through images? Just click the one you find funnier - and surprise yourself with what comes next. <br/>
 				</p>
 				
