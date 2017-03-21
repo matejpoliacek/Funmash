@@ -22,18 +22,31 @@ function zpopup(img) {
 		var source = getImageName(img);
 		var newImg = document.createElement("img")
 		newImg.setAttribute('src', source);
-		console.log(newImg)
+		
+		var wd = getWidth(newImg);
+		var hg = getHeight(newImg);
+
+		if (wd > hg ) {
         w2popup.open({
             title: 'Image',
-            body: '<div class="w2ui-centered"><img class="popup" src="'+source+'"></img></div>',
-			width: getWidth(newImg),
-			height: getHeight(newImg)
+			body: '<div class="w2ui-centered"><img class="popup" src="'+source+'", height="'+hg+'"></img></div>',
+			width: wd + 100,
+			height: hg + 50
         });
+		
+		} else {
+		w2popup.open({
+            title: 'Image',
+			body: '<div class="w2ui-centered"><img class="popup" src="'+source+'", width="'+wd+'"></img></div>',
+			width: wd + 100,
+			height: hg + 50
+        });
+		}
     }
 
 
 function getWidth(imgFile) {
-	var wdBody =  (window.innerWidth || document.body.clientWidth);
+	var wdBody =  (window.innerWidth || document.body.clientWidth) * 0.85;
 	var wdImg = imgFile.naturalWidth * 1.05;
 	
 	if (wdBody > wdImg) {
@@ -44,7 +57,7 @@ function getWidth(imgFile) {
 }
 
 function getHeight(imgFile) {
-	var hgBody = (window.innerHeight || document.body.clientHeight);
+	var hgBody = (window.innerHeight || document.body.clientHeight) * 0.85;
 	var hgImg = imgFile.naturalHeight * 1.1;
 	if (hgBody > hgImg) {
 		return hgImg;
