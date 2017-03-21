@@ -3,6 +3,7 @@
 
 {% block styles %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}" />
+<script src="{% static "js/about.js" %}"></script>
 {% endblock %}
 
 {% block title_block %}
@@ -11,27 +12,54 @@
 
 {% block body_block %}
 <div class="bg">
-	<h1 class="about_header">About Funmash</h1>
+	<h1 class="headertext">About Funmash</h1>
 
-			<div class="about">
+		<div class="about">
+			
+			
+			<div id="mySideBar" class="sideBar">	
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				{% if user.is_authenticated %}
+				<form class="feedbackform" role="form" action="" method="post">
+					{% csrf_token %}
+					Got feedback?<br><br>
+					Your name: <br>
+							<input type="text" id="contact_name" name="contact_name" value = "{{ user.username }}"><br>
+							<br>
+
+							Your email: <br>
+							<input type="text" id="contact_email" name="contact_email" value="{{ user.email }}"><br>
+							<br>
+
+							Tell us what you think: <br>
+							<textarea name="content" id="content" rows="15" cols="50">I'm in love with your site!</textarea><br><br>
+					<button type="submit">Submit</button>
+				</form>
+				{% endif %}
+	
+			</div> 
+			<div class="buttondiv">
+			<button id="open" class="button" onclick="openNav()"><span>Got feedback?</span></button>	
+			</div>
 			
 				<p class="p1">
 					Tired of scrolling through images? Just click the one you find funnier - and surprise yourself with what comes next. <br/>
 				</p>
-					
-				<p class="p2">
+				
+				<p class="p2" id="quote1">
 					Registering with your email address lets you see which images were rated as the funniest.
 				</p>
 				
-				<p class="p3">
+				<p class="p3" id="quote2">
 					Upload your own images and be recognised for your exceptional sense of humour!
 				</p>
 				
-				<p class = "p4">
+				<p class = "p4" id="quote3">
 					For feedback and latest statistics, feel free to email <br/><a href="mailto:1103086v@student.gla.ac.uk">the Funmash team</a>
+					{% if user.is_authenticated %} or fill out the form below: {% endif %}
 				</p>
-					
-			</div>	
+	
+		</div>	
 	<br/>
 </div>
 {% endblock %}

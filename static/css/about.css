@@ -5,28 +5,7 @@
 	  -o-background-size: cover;
 	  background-size: 60%;
 	  background-blend-mode: overlay;
-		height: calc(200vh);
-	}
-
-	.about_header {
-			text-align: center;
-		font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-		position:fixed;
-		font-style: normal;
-		font-variant: normal;
-		left:41%;
-		color:#9b1304;
-			
-			
-		display: block;
-
-		text-align: center;	
-		padding: 16px;
-		margin-top:-80px;
-		text-decoration: none;
-		
-		font-size: 40px;
-		
+		height: calc(70vh);
 	}
 
 	.about {
@@ -137,7 +116,7 @@
 	.p3 {
 		position:absolute;
 		display:inline-block;
-		top: 120%;
+		top: 62%;
 		left: 28%;
 		color:white;
 		max-width: 800px;
@@ -153,7 +132,7 @@
 	.p4 {
 		position:absolute;
 		display:inline-block;
-		top: 180%;
+		top: 62%;
 		left: 28%;
 		max-width: 800px;
 		text-align: center;
@@ -164,6 +143,117 @@
 		padding:20px;
 	 
 	}
+
+	.formdiv {
+		position:absolute;
+		top:240%;
+		width: 100%;
+		text-align: center;
+	}
+
+
+/* Navigation sidebar */
+.sideBar {	
+	height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 3, 0.89); 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+}
+#open {
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	color: #BD0000;
+	font-size: 22px;
+	text-align: left;
+	font-style: normal;
+	font-variant: normal;
+	text-shadow: 2px 2px 24px rgba(150, 150, 150, 1);	
+	display: inline;
+	padding: 16px;
+	text-decoration: none;
+
+}
+/* Style of close bar */
+.sideBar .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.sideBar form {
+		position:relative;
+		display: inline-block;
+		/*top: 240%;*/
+	
+		max-width: 400px;
+		text-align: center;
+		background-color: rgba(0, 0, 0, 0.0);
+		font-weight:900;
+		color:white;
+		border-radius: 7px;
+		padding:20px;
+	 	margin-right: auto;
+	 	margin-left: auto;
+	}
+
+
+/* Resize  side bar on smaller windows */	
+@media screen and (max-height: 450px) {
+	.sideBar {padding-top: 15px;}
+	.sideBar a {font-size: 18px; }
+}
+
+
+.button {
+  display: inline-block;
+  border-radius: 4px; 
+  border: none;
+  color: #9b1304; 
+  box-shadow: 10px 10px 5px #9b1304;
+  background-color:  #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 220px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+
+.button:hover span {
+  padding-right: 20px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 
 	/* boring alternative that works: paragraphs centered underneath each other
 
