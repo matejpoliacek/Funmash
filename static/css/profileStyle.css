@@ -18,6 +18,10 @@ p {
 	text-decoration: none;
 }
 
+p#ifsuccess {
+	font-size: 1.6vmin;
+}
+
 /* Navigation sidebar */
 .sideBar {	
 	height: 100%; 
@@ -91,40 +95,33 @@ p {
 	font-size: 5vmin;
 	margin-left: 5vmin;
 }
-/* Push page content to the right when opening side bar */
-#main {
-	display: table;
-	margin: auto;
-	
-	border-collapse: separate;
-	transition: margin-left .5s;
-	padding: 20px;
-	width: 90%;
-	margin-right: 20%;
-	margin-left: 20%;
-	
-	
-}
+
+
 /* Resize  side bar on smaller windows */	
 @media screen and (max-height: 450px) {
 	.sideBar {padding-top: 15px;}
 	.sideBar a {font-size: 18px; }
 }
 .button {
-  display: inline-block;
-  border-radius: 4px; 
-  border: none;
-  color: #9b1304; 
-  box-shadow: 10px 10px 5px #9b1304;
-  background-color:#fffdf4;
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-  
+	
+	background-color: #f7efdc;
+	color: #9b1304;
+	font-size: 16px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 4px;
+	width: 250px;	
+	display: inline-block;
+ 
+	text-align: center;
+
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+	
+	/* responsive values */
+	width: 25vmin;
+	font-size: 1.6vmin;  
 }
 
 .button span {
@@ -151,41 +148,58 @@ p {
 	opacity: 1;
 	right: 0;
 }
+
+#main {
+	/* Push page content to the right when opening side bar */
+	transition: margin-left 0.5s, width 0.5s;
+	display: flex;
+	margin: auto;
+	border-spacing: 10px;
+	border-collapse: separate;
+	overflow: hidden;
+	width: 90%;
+	position: center;
+	padding-left: 2%;
+	padding-bottom: 5%;
+	background-color: #fff7e8;
+	margin-right: 5%;
+    margin-left: 5%;
+	border:1px solid #021a40;
+	box-shadow: 10px 10px 5px #9b1304;
+}
+
 .uploadform {
-	display:inline-block;
-	width: 30%;
-	height: 90%;
+	min-width: 40%;
+	min-height: 90%;
 	vertical-align: middle;
-
-	padding-left: 120px;
-	padding-top: 50px;
-
-	padding-bottom: 40px;
-
+	padding-right: 10%;
+	
 }
-#firsttext{
-	font-size: 24px;
-}
-#secondtext {
-	font-size: 16px;
-}
+
 .submissions {
-	display:inline-block;
-	width: 30%;
-	height: 90%;
-	vertical-align: middle;
-	padding-bottom: 80px;
 	
-	
- }
+	min-width: 40%;
+	min-height: 90%;
+	vertical-align: middle;	
+}
+ 
 .submissions p {
 	
-	font-size: 40px;
+	font-size: 30px;
+	font-size: 3vmin;
  }
 
 
-.imagescontainer table {
-	
+#firsttext{
+	font-size: 30px;
+	font-size: 3vmin;
+}
+#secondtext {
+	font-size: 20px;
+	font-size: 2vmin;
+}
+
+.imagescontainer table {	
 	width: 100%;
 }
 .imagescontainer td {
@@ -195,3 +209,5 @@ p {
 	width: 75px;
 	height: 75px;
 }
+
+

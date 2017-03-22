@@ -13,6 +13,7 @@ $(document).ready(function (e) {
             success:function(data){
                 console.log("success");
                 console.log(data);
+				document.getElementById("ifsuccess").innerHTML = "succesfuly uploaded!";	
 				$.get('/funmash_app/uploaded/', {}, function(data) {
 					$('#uploaded').html(data);
 					
@@ -21,13 +22,13 @@ $(document).ready(function (e) {
 				
             },
             error: function(data){
-                console.log("error");
+                document.getElementById("ifsuccess").innerHTML = "not successful! wrong format?";
+				console.log("error");
                 console.log(data);
 				
             },
 			
         });
-		document.getElementById("ifsuccess").innerHTML = "succesfuly uploaded!";
 		success_fadeout();
     }));
 
@@ -72,5 +73,6 @@ $(document).ready(function (e) {
 	      fade.style.opacity = opacity - 0.05; // else remove 0.04 from opacity
 	    }
 	  }, 100); // run every 0.1 second
+	  document.getElementById("ifsuccess").innerHTML = "<br>";
 	}
 });
