@@ -13,17 +13,16 @@
 		font-family: Futura, "Trebuchet MS", Arial, sans-serif;	
 		font-style: normal;
 		font-variant: normal;
-		font-size: 30px;	
+		font-size: 3vh;	
 
 	}
 
 	.p1 {
 	  position:fixed;
-	  font-size: 30px;
 	  padding:70px 30px;
 	  left: 45%;
 	  top: 13%;
-	  font-size: 25px;
+	  font-size: 2.3vh;
 	  /*margin:1em auto 60px;*/
 	  border:2px solid #BC2800;
 	  text-align:center;
@@ -168,7 +167,7 @@
 #open {
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	color: #BD0000;
-	font-size: 22px;
+	font-size: 3vmin;
 	text-align: left;
 	font-style: normal;
 	font-variant: normal;
@@ -219,12 +218,15 @@
   box-shadow: 10px 10px 5px #9b1304;
   background-color:  #ffffff;
   text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 220px;
+  font-size: 3vw;
+  padding: 2vw;
+  width: 26vmin;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  position: absolute;
+  left:4.3%;
+  top: 25%;
 }
 
 .button span {
@@ -232,7 +234,7 @@
   display: inline-block;
   position: relative;
   transition: 0.5s;
-  padding-left: 20px;
+  padding-left: 0.43vw;
 }
 
 .button span:after {
