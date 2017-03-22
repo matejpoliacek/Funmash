@@ -82,14 +82,16 @@ def about(request):
                 headers = {'Reply-To': contact_email }
             )
             email.send()
+            return render(request, 'funmash_app/about.html', {'form': form_class, 'leotext': "Cheers for the feedback!"})
+            # return render(request, 'funmash_app/about.html', {
+            #             'form': form_class, 'leotext': "Cheers for the feedback!"
+            #             })
 
-            return render(request, 'funmash_app/about.html', {
-                        'form': form_class, 'leotext': "Cheers for the feedback!"
-                        })
-
-    else:
-        return render(request, 'funmash_app/about.html', {
-        'form': form_class, 'leotext': "Tired of scrolling through images? Just click the one you find funnier - and surprise yourself with what comes next!"
+        else:
+            return render(request, 'funmash_app/about.html', {'form': form_class, 'leotext': "Pro tip: Resubmit the form, you might have mistyped your email address."})
+    # else:
+    return render(request, 'funmash_app/about.html', {
+    'form': form_class, 'leotext': "Tired of scrolling through images? Just click the one you find funnier - and surprise yourself with what comes next!"
     })
 
 
