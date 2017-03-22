@@ -19,23 +19,23 @@
 			
 			<div id="mySideBar" class="sideBar">	
 				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-				{% if user.is_authenticated %}
+				
 				<form class="feedbackform" role="form" action="" method="post">
 					{% csrf_token %}
 					Got feedback?<br><br>
 					Your name: <br>
-							<input type="text" id="contact_name" name="contact_name" value = "{{ user.username }}"><br>
+							<input type="text" id="contact_name" name="contact_name" {% if user.is_authenticated %} value = "{{ user.username }}" {% endif %} ><br>
 							<br>
 
 							Your email: <br>
-							<input type="text" id="contact_email" name="contact_email" value="{{ user.email }}"><br>
+							<input type="text" id="contact_email" name="contact_email" {% if user.is_authenticated %} value="{{ user.email }}" {% endif %} ><br>
 							<br>
 
 							Tell us what you think: <br>
-							<textarea name="content" id="content" rows="15" cols="50">I'm in love with your site!</textarea><br><br>
+							<textarea name="content" id="content" rows="15" cols="50">I'm in love with your site!</textarea><br>
 					<button type="submit" id="leo">Submit</button>
 				</form>
-				{% endif %}
+				
 	
 			</div> 
 			<div class="buttondiv">
@@ -43,7 +43,7 @@
 			</div>
 			
 				<p class="p1" id="leotext">
-					Tired of scrolling through images? Just click the one you find funnier - and surprise yourself with what comes next. <br/>
+					{{ leotext }} <br/>
 				</p>
 				
 				<p class="p2" id="quote1">

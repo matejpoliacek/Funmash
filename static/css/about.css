@@ -162,7 +162,7 @@
     left: 0;
     background-color: rgba(0, 0, 3, 0.89); 
     overflow-x: hidden; 
-    padding-top: 60px; 
+    padding-top: 3vh; 
     transition: 0.5s; 
 }
 #open {
@@ -254,7 +254,9 @@
   right: 0;
 }
 
-
+#leo {
+	
+}
 	/* boring alternative that works: paragraphs centered underneath each other
 
 	.p2 {

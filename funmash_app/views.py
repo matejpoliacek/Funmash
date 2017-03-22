@@ -70,6 +70,7 @@ def about(request):
                 'contact_name': contact_name,
                 'contact_email': contact_email,
                 'form_content': form_content,
+                'leotext' : "Cheers for the feedback!",
             })
             content = template.render(context)
 
@@ -82,8 +83,13 @@ def about(request):
             )
             email.send()
 
-    return render(request, 'funmash_app/about.html', {
-        'form': form_class,
+            return render(request, 'funmash_app/about.html', {
+                        'form': form_class, 'leotext': "Cheers for the feedback!"
+                        })
+
+    else:
+        return render(request, 'funmash_app/about.html', {
+        'form': form_class, 'leotext': "Tired of scrolling through images? Just click the one you find funnier - and surprise yourself with what comes next!"
     })
 
 
