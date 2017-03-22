@@ -29,7 +29,7 @@ h1 {
 	padding-top: 1.6vmin;
 	margin-top: -8vmin;
 	font-size: 4vmin;
-	padding-left: calc(45% + 5vmin);
+	padding-left: calc(43.5% );
 	
 }
 	
@@ -172,7 +172,7 @@ ul li a:hover {
 	font-style: normal;
 	font-variant: normal;
 	/*	line-height: 15px; */
-	left: 50%;
+	left: 46.6%;
 	position: fixed;
 	bottom: 5%;
 }
