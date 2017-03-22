@@ -1,5 +1,3 @@
-
-
 body {
 	background-color:  #fffdf4;
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
@@ -22,14 +20,13 @@ p {
 
 /* Navigation sidebar */
 .sideBar {	
-	
 	height: 100%; 
     width: 0; 
     position: fixed; 
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111; 
+    background-color: black; 
     overflow-x: hidden; 
     padding-top: 60px; 
     transition: 0.5s; 
@@ -145,7 +142,7 @@ p {
 	padding-top: 50px;
 
 	padding-bottom: 40px;
-	box-shadow: 10px 10px 5px #9b1304; 
+
 }
 #firsttext{
 	font-size: 24px;
@@ -158,16 +155,13 @@ p {
 	width: 30%;
 	height: 90%;
 	vertical-align: middle;
-	box-shadow: 10px 10px 5px #9b1304;
-	
-
 	padding-bottom: 80px;
 	
 	
  }
 .submissions p {
 	
-	font-size: 20px;
+	font-size: 40px;
  }
 
 

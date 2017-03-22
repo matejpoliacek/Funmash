@@ -79,7 +79,7 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySideBar").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
-    document.body.style.backgroundColor = "#ffe29b";
+    document.body.style.backgroundColor = " #fffdf4";
 }
 
 

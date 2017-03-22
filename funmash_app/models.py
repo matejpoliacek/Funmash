@@ -4,6 +4,7 @@ from django.db import models
 from django.conf import settings
 
 
+
 # Create your models here.
 
 class Image(models.Model):
@@ -16,7 +17,7 @@ class Image(models.Model):
 
     # ranking of the file (higher = better)
     ranking = models.IntegerField(default=0)
-
+	
     # Username of user who uploaded the picture
     owner = models.CharField(max_length=255, default = "Nobilitie")
 
@@ -29,8 +30,8 @@ class Image(models.Model):
 
     def __str__(self):
         return self.name
-
-
+		
+		
 class UserProfile(models.Model):
     # A required line - links a UserProfile to User.
     user = models.OneToOneField(User)
@@ -42,4 +43,8 @@ class UserProfile(models.Model):
 
     def __unicode__(self):
         return self.user.username
+		
+
+
+
 
