@@ -26,16 +26,19 @@ p {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: black; 
+    background-color: rgba(0, 0, 3, 0.89);
     overflow-x: hidden; 
     padding-top: 60px; 
-    transition: 0.5s; 
+    transition: 0.5s;	
+	
+	/* responsive */
+	 padding-top: 6vmin; 
 
 }
 #open {
 	
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-	color: #BD0000;
+	color: white;
 	font-size: 22px;
 	text-align: left;
 	font-style: normal;
@@ -44,6 +47,10 @@ p {
 	display: inline;
 	padding: 16px;
 	text-decoration: none;
+	
+	/* responsive */
+	font-size: 2.2vmin;
+	padding: 1.6vmin;
 }
 
 /* Links on side bar */
@@ -57,7 +64,13 @@ p {
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	font-style: normal;
 	font-variant: normal;
-	color: #BD0000;	
+	color: white;	
+	text-align: center;
+	
+	/* responsive values */
+	
+	padding: 8vmin 0.8vmin 2vmin 0.8vmin;
+	font-size: 2.5vmin;
 }
 /*  Change color of links when you hover over them */
 .sideBar  a:hover, .offcanvas a:focus {
@@ -67,10 +80,16 @@ p {
 .sideBar .closebtn {
 	
 	position: absolute;
+	color:#9b1304;
 	top: 0%;
 	right: 25px;
 	font-size: 50px;
 	margin-left: 50px;
+	
+	/*responsive*/
+	right: 2.5vmin;
+	font-size: 5vmin;
+	margin-left: 5vmin;
 }
 /* Push page content to the right when opening side bar */
 #main {
