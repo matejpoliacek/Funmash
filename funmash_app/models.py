@@ -16,7 +16,7 @@ class Image(models.Model):
     source = models.CharField(max_length=255, default="")
 
     # ranking of the file (higher = better)
-    ranking = models.IntegerField(default=0)
+    ranking = models.PositiveIntegerField(default=0)
 	
     # Username of user who uploaded the picture
     owner = models.CharField(max_length=255, default = "Nobilitie")
