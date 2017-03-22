@@ -209,6 +209,20 @@
 	 	font-size: 1.75vmin;
 	}
 
+	.p6 {
+		position:absolute;
+		display:inline-block;
+		top: 62%;
+		left: 28%;
+		max-width: 80vmin;
+		text-align: center;
+		background-color: rgba(0, 0, 0, 0.3);
+		font-weight:900;
+		color:white;
+		border-radius: 0.7vmin;
+		padding:2vmin;
+	}
+
 	.formdiv {
 		position:absolute;
 		top:240%;
