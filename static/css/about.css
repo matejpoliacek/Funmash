@@ -19,7 +19,7 @@
 
 	.p1 {
 	  position:fixed;
-	  padding:70px 30px;
+	  padding:7vmin 3vmin;
 	  left: 45%;
 	  top: 13%;
 	  font-size: 2.3vh;
@@ -29,26 +29,72 @@
 	  color:#000;
 	  background-color: rgba(255, 255, 255, 0.8);
 	  
-	  /* css3 */
-	  /*
-	  NOTES:
-	  -webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
-	  -webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
-	  Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
-	  */
-	  -webkit-border-top-left-radius:480px 240px;
+	  -webkit-border-top-left-radius:48vmin 24vmin;
+	  -webkit-border-top-right-radius:48vmin 24vmin;
+	  -webkit-border-bottom-right-radius:48vmin 24vmin;
+	  -webkit-border-bottom-left-radius:48vmin 24vmin;
+	  -moz-border-radius:48vmin / 24vmin;
+	  border-radius:48vmin / 24vmin;
+
+	  max-width: 40vmin;
+
+/*	  	  -webkit-border-top-left-radius:480px 240px;
 	  -webkit-border-top-right-radius:480px 240px;
 	  -webkit-border-bottom-right-radius:480px 240px;
 	  -webkit-border-bottom-left-radius:480px 240px;
 	  -moz-border-radius:480px / 240px;
 	  border-radius:480px / 240px;
 
-	  max-width: 400px;
+	  max-width: 400px;*/
 	  
 	}
 
 	/* creates larger curve */
 	.p1:before {
+	  content:"";
+	  position:absolute;
+	  z-index:-2;
+	  bottom:-3vmin;
+	  right:50%;
+	  width:5vmin;
+	  height:3vmin;
+	  border-style:solid;
+	  border-width:0 2px 2px 0;
+	  border-color:#BC2800;
+	  margin-right:-1vmin;
+	  background:transparent;
+	  /* css3 */
+	  -webkit-border-bottom-right-radius:8vmin 5vmin;
+	  -moz-border-radius-bottomright:8vmin 5vmin;
+	  border-bottom-right-radius:8vmin 5vmin;
+	  /* reduce the damage in FF3.0 */
+	  display:block;
+
+	}
+
+	.p1:after {
+	  content:"";
+	  position:absolute;
+	  z-index:-2;
+	  bottom:-3.3vmin;
+	  right:50%;
+	  width:2vmin;
+	  height:3.1vmin;
+	  border-style:solid;
+	  border-width:0 2px 2px 0;
+	  border-color:#BC2800;
+	  margin-right:2vmin;
+	  background:transparent;
+	
+	  -webkit-border-bottom-right-radius:4vmin 5vmin;
+	  -moz-border-radius-bottomright:4vmin 5vmin;
+	  border-bottom-right-radius:4vmin 5vmin;
+	
+	  display:block;
+
+	}
+
+/*	.p1:before {
 	  content:"";
 	  position:absolute;
 	  z-index:-2;
@@ -61,17 +107,16 @@
 	  border-color:#BC2800;
 	  margin-right:-10px;
 	  background:transparent;
-	  /* css3 */
+	
 	  -webkit-border-bottom-right-radius:80px 50px;
 	  -moz-border-radius-bottomright:80px 50px;
 	  border-bottom-right-radius:80px 50px;
-	  /* reduce the damage in FF3.0 */
+	  
 	  display:block;
 
 	}
 
-	/* creates smaller curve */
-	.p1:after {
+.p1:after {
 	  content:"";
 	  position:absolute;
 	  z-index:-2;
@@ -84,14 +129,20 @@
 	  border-color:#BC2800;
 	  margin-right:20px;
 	  background:transparent;
-	  /* css3 */
+	
 	  -webkit-border-bottom-right-radius:40px 50px;
 	  -moz-border-radius-bottomright:40px 50px;
 	  border-bottom-right-radius:40px 50px;
-	  /* reduce the damage in FF3.0 */
+	
 	  display:block;
 
 	}
+
+
+	*/
+
+	/* creates smaller curve */
+	
 
 /* black text with white background alt 
 		background-color: rgba(255, 255, 255, 0.6);
@@ -103,13 +154,13 @@
 		display:inline-block;
 		top: 62%;
 		left: 28%;
-		max-width: 800px;
+		max-width: 80vmin;
 		text-align: center;
 		background-color: rgba(0, 0, 0, 0.3);
 		font-weight:900;
 		color:white;
-		border-radius: 7px;
-		padding:20px;
+		border-radius: 0.7vmin;
+		padding:2vmin;
 	}
 
 	.p3 {
@@ -118,12 +169,12 @@
 		top: 62%;
 		left: 28%;
 		color:white;
-		max-width: 800px;
+		max-width: 80vmin;
 		text-align: center;
 		font-weight:900;
 		background-color: rgba(0, 0, 0, 0.3);
-		border-radius: 7px;
-		padding:20px;
+		border-radius: 0.7vmin;
+		padding:2vmin;
 	 
 	}
 
@@ -133,13 +184,13 @@
 		display:inline-block;
 		top: 62%;
 		left: 28%;
-		max-width: 800px;
+		max-width: 80vmin;
 		text-align: center;
 		background-color: rgba(0, 0, 0, 0.3);
 		font-weight:900;
 		color:white;
-		border-radius: 7px;
-		padding:20px;
+		border-radius: 0.7vmin;
+		padding:2vmin;
 	 
 	}
 
