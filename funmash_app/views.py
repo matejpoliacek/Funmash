@@ -245,7 +245,7 @@ def previous_pic(request):
         context_dict['numOfFirstImage'] = first_image
         return render(request, 'funmash_app/uploaded.html', context_dict)
 
-
+@login_required
 def top5(request):
     image_list = Image.objects.order_by('-ranking')[:5]
     context_dict = {'topImages': image_list }

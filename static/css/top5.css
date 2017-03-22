@@ -6,3 +6,28 @@ img.topImg {
 		width: auto;
 		vertical-align: middle;
 	}
+
+p {
+	font-weight:normal;
+	font-style:italic;
+	word-spacing:2pt;
+	font-size:11px;
+	letter-spacing:1pt;
+	font-family:verdana, sans-serif;
+	line-height:1;
+	text-align: center;
+	margin-bottom: 2%:
+}
+p.ownermsg {
+	color:#BDBDBD;
+	
+}
+
+p.ownermsgfail {
+	color:#ff7a6b;
+}
+
+.footer {
+	text-align: left;
+	left:	10%;
+}

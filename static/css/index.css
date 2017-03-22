@@ -37,37 +37,23 @@ img.image {
 	padding-left: 5%;
 }
 
-p.ownermsg {
+p {
 	font-weight:normal;
 	font-style:italic;
-	color:#BDBDBD;
-	letter-spacing:1pt;
 	word-spacing:2pt;
 	font-size:11px;
-	
+	letter-spacing:1pt;
 	font-family:verdana, sans-serif;
 	line-height:1;
+	padding-left: 5%;	
+}
+
+p.ownermsg {
+	color:#BDBDBD;	
 }
 
 p.ownermsgfail {
-	font-weight:normal;
-	font-style:italic;
 	color:#ff7a6b;
-	letter-spacing:1pt;
-	word-spacing:2pt;
-	font-size:11px;
-	
-	font-family:verdana, sans-serif;
-	line-height:1;
-}
-
-p#img1
-{
-	padding-left: 5%;
-}
-
-p#img2 {
-	padding-left: 5%;
 }
 
 
