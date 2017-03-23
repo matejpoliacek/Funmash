@@ -1,3 +1,4 @@
+	/* Background image */
 	.bg { 
 	  background: url("background_collage.jpg") repeat center center fixed; 
 	  -webkit-background-size: cover;
@@ -7,49 +8,34 @@
 	  background-blend-mode: overlay;
 		height: calc(70vh);
 	}
-
+	/* Page font */
 	.about {
-		
 		font-family: Futura, "Trebuchet MS", Arial, sans-serif;	
 		font-style: normal;
 		font-variant: normal;
 		font-size: 3vmin;	
-
 	}
-
+	/* Speech bubble formatting */
 	.p1 {
 	  position:fixed;
 	  padding:7vmin 3vmin;
 	  left: 45%;
 	  top: 13%;
 	  font-size: 2.3vmin;
-	  /*margin:1em auto 60px;*/
 	  border:2px solid #BC2800;
 	  text-align:center;
 	  color:#000;
 	  background-color: rgba(255, 255, 255, 0.8);
-	  
 	  -webkit-border-top-left-radius:48vmin 24vmin;
 	  -webkit-border-top-right-radius:48vmin 24vmin;
 	  -webkit-border-bottom-right-radius:48vmin 24vmin;
 	  -webkit-border-bottom-left-radius:48vmin 24vmin;
 	  -moz-border-radius:48vmin / 24vmin;
 	  border-radius:48vmin / 24vmin;
-
 	  max-width: 40vmin;
-
-/*	  	  -webkit-border-top-left-radius:480px 240px;
-	  -webkit-border-top-right-radius:480px 240px;
-	  -webkit-border-bottom-right-radius:480px 240px;
-	  -webkit-border-bottom-left-radius:480px 240px;
-	  -moz-border-radius:480px / 240px;
-	  border-radius:480px / 240px;
-
-	  max-width: 400px;*/
-	  
 	}
 
-	/* creates larger curve */
+	/* creates larger curve on speech bubble*/
 	.p1:before {
 	  content:"";
 	  position:absolute;
@@ -67,11 +53,9 @@
 	  -webkit-border-bottom-right-radius:8vmin 5vmin;
 	  -moz-border-radius-bottomright:8vmin 5vmin;
 	  border-bottom-right-radius:8vmin 5vmin;
-	  /* reduce the damage in FF3.0 */
 	  display:block;
-
 	}
-
+	/* Speech bubble formatting */
 	.p1:after {
 	  content:"";
 	  position:absolute;
@@ -89,66 +73,12 @@
 	  -webkit-border-bottom-right-radius:4vmin 5vmin;
 	  -moz-border-radius-bottomright:4vmin 5vmin;
 	  border-bottom-right-radius:4vmin 5vmin;
-	
+
 	  display:block;
 
 	}
-
-/*	.p1:before {
-	  content:"";
-	  position:absolute;
-	  z-index:-2;
-	  bottom:-33px;
-	  right:50%;
-	  width:50px;
-	  height:30px;
-	  border-style:solid;
-	  border-width:0 2px 2px 0;
-	  border-color:#BC2800;
-	  margin-right:-10px;
-	  background:transparent;
 	
-	  -webkit-border-bottom-right-radius:80px 50px;
-	  -moz-border-radius-bottomright:80px 50px;
-	  border-bottom-right-radius:80px 50px;
-	  
-	  display:block;
-
-	}
-
-.p1:after {
-	  content:"";
-	  position:absolute;
-	  z-index:-2;
-	  bottom:-33px;
-	  right:50%;
-	  width:20px;
-	  height:31px;
-	  border-style:solid;
-	  border-width:0 2px 2px 0;
-	  border-color:#BC2800;
-	  margin-right:20px;
-	  background:transparent;
-	
-	  -webkit-border-bottom-right-radius:40px 50px;
-	  -moz-border-radius-bottomright:40px 50px;
-	  border-bottom-right-radius:40px 50px;
-	
-	  display:block;
-
-	}
-
-
-	*/
-
-	/* creates smaller curve */
-	
-
-/* black text with white background alt 
-		background-color: rgba(255, 255, 255, 0.6);
-		border-radius: 7px;
-		padding:20px;
-*/
+	/* Formatting of text quote */
 	.p2 {
 		position:absolute;
 		display:inline-block;
@@ -162,7 +92,8 @@
 		border-radius: 0.7vmin;
 		padding:2vmin;
 	}
-
+	
+	/* Formatting of text quote */
 	.p3 {
 		position:absolute;
 		display:inline-block;
@@ -175,10 +106,9 @@
 		background-color: rgba(0, 0, 0, 0.3);
 		border-radius: 0.7vmin;
 		padding:2vmin;
-	 
 	}
-
-
+	
+	/* Formatting of text quote */
 	.p4 {
 		position:absolute;
 		display:inline-block;
@@ -193,7 +123,8 @@
 		padding:2vmin;
 	 
 	}
-
+	
+	/* Formatting of text quote */
 	.p5 {
 		position:absolute;
 		display:inline-block;
@@ -209,6 +140,7 @@
 	 	font-size: 1.75vmin;
 	}
 
+	/* Formatting of text quote */
 	.p6 {
 		position:absolute;
 		display:inline-block;
@@ -223,6 +155,7 @@
 		padding:2vmin;
 	}
 
+	/* Format of the feedback form */
 	.formdiv {
 		position:absolute;
 		top:240%;
@@ -244,6 +177,7 @@
     padding-top: 3vh; 
     transition: 0.5s; 
 }
+/* Format side bar open button text*/
 #open {
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	color: #BD0000;
@@ -257,7 +191,7 @@
 	text-decoration: none;
 
 }
-/* Style of close bar */
+/* Style of close button */
 .sideBar .closebtn {
 	position: absolute;
 	top: 0;
@@ -265,7 +199,7 @@
 	font-size: 36px;
 	margin-left: 50px;
 }
-
+/* Style of form in sideBar */
 .sideBar form {
 		position:relative;
 		display: inline-block;
@@ -289,7 +223,7 @@
 	.sideBar a {font-size: 18px; }
 }
 
-
+/* Style side bar button */
 .button {
   display: inline-block;
   border-radius: 4px; 
@@ -309,6 +243,7 @@
   top: 25%;
 }
 
+/* Style position of side bar opening button  */
 .button span {
   cursor: pointer;
   display: inline-block;
@@ -317,6 +252,7 @@
   padding-left: 0.43vw;
 }
 
+/* Style of hover element of open button */
 .button span:after {
   content: '\00bb';
   position: absolute;
@@ -326,11 +262,11 @@
   transition: 0.5s;
 }
 
-
+/* Style of text of open button when hovering */
 .button:hover span {
   padding-right: 20px;
 }
-
+/* Style after hover of open button */
 .button:hover span:after {
   opacity: 1;
   right: 0;
@@ -339,33 +275,3 @@
 #leo {
 	
 }
-	/* boring alternative that works: paragraphs centered underneath each other
-
-	.p2 {
-		left: 41%;
-		top: 60%;
-		width: 400px;
-		display: inline-block;
-		position: absolute;
-		text-align: center;
-	}
-
-	.p3 {
-		left:41%;
-		top: 75%;
-		width: 400px;
-		display:inline-block;
-		position: absolute;
-		text-align: center;
-	}
-
-	.p4 {
-		left:41%;
-		top: 90%;
-		width: 400px;
-		display:inline-block;
-		position: absolute;
-		text-align: center;
-	}
-
-	*/

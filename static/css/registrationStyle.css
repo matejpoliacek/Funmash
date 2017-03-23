@@ -1,10 +1,11 @@
+/* Override bootstrap body */
 body {
 	background-color: #fffdf4;
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	color: #9b1304;
 	padding-top: 0px;
 }
-
+/* Override bootstrap header fonts */
 .form-signin h2 {
 	text-align: left;
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
@@ -16,6 +17,7 @@ body {
 	display: block;
 	text-decoration: none;
 }
+/* Create button for sign in */
 .form-signin button {
 	background-color: #f7efdc;
 	color: #9b1304;
@@ -25,7 +27,7 @@ body {
 	border-radius: 4px;
 	width: 220px;
 }
-
+/* Format form */
 .form-signin {
 	padding-left: 5%;
 }
