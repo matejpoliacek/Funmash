@@ -1,60 +1,54 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.shortcuts import redirect
-
-from funmash_app.models import Image, UserProfile
-import os
-from django.core.exceptions import ValidationError
-
-from funmash_app.forms import UserForm, FeedbackForm
-
-from random import randint
-
-from django.contrib.auth import authenticate, login
-from django.http import HttpResponseRedirect, HttpResponse
-from django.core.urlresolvers import reverse
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
-from django.conf import settings
-from django.core.files.storage import FileSystemStorage
+from django.contrib.auth import authenticate, login
 
 from django.core.mail import EmailMessage
+from django.core.urlresolvers import reverse
+from django.core.files.storage import FileSystemStorage
+from django.core.exceptions import ValidationError
+
 from django.shortcuts import redirect
+from django.shortcuts import render
+from django.shortcuts import redirect
+
+from django.http import HttpResponseRedirect, HttpResponse
+
 from django.template import Context
 from django.template.loader import get_template
 
+from funmash_app.models import Image, UserProfile
+import os
+from funmash_app.forms import UserForm, FeedbackForm
+from random import randint
+from django.conf import settings
 
-
+#view for index page
 def index(request):
     context_dict = {}
     images = Image.objects.all()
-
     numOfImages = len(images)
-
     ranNum1 = randint(0, numOfImages-1)
     ranNum2 = randint(0, numOfImages-1)
-
+	
+	#Ensuring that the pcitures are not the same, 
+	#at least they .source is not the same
     while (ranNum2 == ranNum1):
         ranNum2 = randint(0, numOfImages-1)
 
-    firstImage = images[ranNum1]
-    
+    firstImage = images[ranNum1]    
     secondImage = images[ranNum2]
-
     context_dict = {'firstImage': firstImage, 'secondImage': secondImage}
 
     return render(request, 'funmash_app/index.html', context=context_dict)
 
-
+#view for about page
 def about(request):
     form_class = FeedbackForm
     
+	#Feedbackform handling
     if request.method == 'POST':
-
         form = form_class(data=request.POST)
-
         if form.is_valid():
             contact_name = request.POST.get(
                 'contact_name'
@@ -96,7 +90,7 @@ def about(request):
     })
 
 
-# helper method to create objects in the database
+# helper method to create new objects in the database
 def add_img(name,source,ranking, ownerName):
     img = Image.objects.get_or_create(name=name)[0]
     img.source = source
@@ -105,16 +99,15 @@ def add_img(name,source,ranking, ownerName):
     img.save()
     return img
 
-
+#profile page view, only accesible when logged in
 @login_required
 def profile(request):
     username = request.user.username
+	#If user uploaded new pciture
     if request.method == 'POST':
         images = Image.objects.all()
         images = images.extra(select={'name': 'CAST(name AS INTEGER)'}).extra(order_by = ['name'])
-
-        numOfNext = len(images) + 1
-		
+        numOfNext = len(images) + 1		
 
         #check if we need to run the loop, i.e. if thre is a discrepancy between
         #the number of images in database and the last filename
@@ -130,27 +123,19 @@ def profile(request):
 		
         myfile = request.FILES['myfile']
         extension = os.path.splitext(myfile.name)[1]
-        extension = extension.lower()
-        print extension
+        extension = extension.lower()	
 		
-		
-	
-	
+		#check if the file is jpeg, if not warn the user
         if extension == ".jpg":
-
             fs = FileSystemStorage()
             filename = fs.save(nameOfNext, myfile)
-            img = add_img(str(numOfNext), settings.MEDIA_URL + nameOfNext, 0, username)
-            print(username)
+            img = add_img(str(numOfNext), settings.MEDIA_URL + nameOfNext, 0, username)            
 	
         else:
             raise ValidationError("Unsupport image type. Please upload jpeg")
-	#return HttpResponse(status=404)
-	return HttpResponse(0)
-        
-		
-       
-
+	
+	return HttpResponse(0)     
+	#If user loads the page
     if request.method == 'GET':
         context_dict = {}
         user_images = []
@@ -246,13 +231,14 @@ def previous_pic(request):
         context_dict['numOfFirstImage'] = first_image
         return render(request, 'funmash_app/uploaded.html', context_dict)
 
+#view for page top5, only accesible to logged in users
 @login_required
 def top5(request):
     image_list = Image.objects.order_by('-ranking')[:5]
     context_dict = {'topImages': image_list }
     return render(request, 'funmash_app/top5.html', context = context_dict)
 
-
+#helper view for ajax to process like of an imaged clicked
 def like_picture(request):
     pic_name=None
     if request.method == 'GET':
@@ -268,7 +254,7 @@ def like_picture(request):
 
         return HttpResponse(0)
 
-# Render part of html template which contains the first image
+#Render part of html template which contains the first image, helper view for ajax
 def render_pic1(request):
     if request.method == 'GET':
         context_dict = {}
@@ -283,6 +269,7 @@ def render_pic1(request):
 
 # Render part of html template which contains the first image
 # Includes check to make sure the two images are not the same
+#helper view for ajax
 def render_pic2(request):
     if request.method == 'GET':
         pic_name = request.GET['picture_name']
@@ -291,12 +278,12 @@ def render_pic2(request):
         images = Image.objects.all()
         numOfImages = len(images)
         ranNum2 = randint(0, numOfImages - 1)
-
+		
+		#This loops ensures that the rendered images are not the same
         while (ranNum2 == pic_name):
             ranNum2 = randint(0, numOfImages)
         context_dict = {}
         images = Image.objects.all()
-
         secondImage = images[ranNum2]
 
         context_dict = {'secondImage': secondImage}
