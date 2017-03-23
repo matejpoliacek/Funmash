@@ -147,7 +147,7 @@ img.image {
 }	
 
 ul li:hover {
-	border:1px solid #FFFFFF;
+	border-bottom:1px solid #FFFFFF;
 	background-color: white;
 	height: 49px;
 	width: -1px;
