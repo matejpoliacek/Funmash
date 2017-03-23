@@ -40,7 +40,7 @@ SECRET_KEY = 'rzw4rr7tw-v#^18ra5fo1h$5mm@-qmi_=r06$h#707fk3of#@!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['assandra123.pythonanywhere.com']
 
 
 # Application definition
@@ -146,9 +146,9 @@ LOGIN_URL = '/accounts/login/'
 
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'testing@example.com'
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False 
+EMAIL_USE_TLS = False
 EMAIL_PORT = 1025

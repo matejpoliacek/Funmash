@@ -1,4 +1,4 @@
-{% extends "funmash_app/base.html" %} 
+{% extends "funmash_app/base.html" %}
 {% load staticfiles %}
 
 
@@ -6,28 +6,28 @@
 <link href="http://v4-alpha.getbootstrap.com/examples/signin/signin.css"
 rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static 'css/registrationStyle.css' %}" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" >	
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
 {% endblock %}
 
 {% block body_block %}
 <h1 class="headertext">Register Here!</h1>
-	
+
 <form class="form-signin" role="form" method="post" action=".">
 		{% csrf_token %}
-		
-		
+
+
 		<input type="text" name="username" id="id_username" class="form-control"
 			placeholder="Username" required autofocus>
-				
-		<input type="text" name="email" id="id_email" class="form-control" 
+
+		<input type="email" name="email" id="id_email" class="form-control"
 			placeholder="Email" required>
-		
-		<input type="password" name="password" id="id_password" class="form-control" 
+
+		<input type="password" name="password1" id="id_password1" class="form-control"
 			placeholder="Password" required>
-			
-		<input type="password" name="password2" id="id_password2" class="form-control" 
+
+		<input type="password" name="password2" id="id_password2" class="form-control"
 			placeholder="Confirm Password" required >
-			
+
 		<button  type="submit" value="Submit" />Sign Up</button>
 		<p>Already a member? <a href="{% url 'auth_login' %}">Login</a></li>
 </form>
