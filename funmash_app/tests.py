@@ -14,7 +14,8 @@ def add_img(name, source, ranking, ownerName):
     img.save()
     return img
 class IndexViewTests(TestCase):
-    def test_index_view_with_no_categories(self):
+	#Test if the page loads
+    def test_index_view(self):
 
         images = {}
         # change if you want to add all pictures
@@ -28,7 +29,8 @@ class IndexViewTests(TestCase):
 
         response = self.client.get(reverse('index'))
         self.assertEqual(response.status_code, 200)
-
+	
+	#Test if the pictures does not have the same source
     def test_index_view2(self):
         images = {}
         # change if you want to add all pictures
@@ -42,44 +44,21 @@ class IndexViewTests(TestCase):
         response = self.client.get(reverse('index'))
         self.assertNotEqual(response.context['firstImage'].source, response.context['secondImage'].source)
 
-    def test_top_5(self):
-        images = {}
-        # change if you want to add all pictures
-        for x in range(1, 15):
-            id = str(x) + ".jpg"
-            # The one line below is these three lines combined:
-            # images["name"]= "1 ("+x+").jpg",
-            # images["source"] = settings.MEDIA_URL+"/"+id
-            # images["ranking"] = x+1
-            add_img(str(x), settings.MEDIA_URL + id, x + 1, "Nobilitie")
+	#Check that it doesnot allow to view top 5 images unless signed in
+	#And we are redirected to other page
+    def test_top_5_302(self):
         response = self.client.get(reverse('top5'))
-        self.assertGreater(response.context['topImages'][0].ranking, response.context['topImages'][1].ranking)
-    def test_top_5_Empty(self):
-        response = self.client.get(reverse('top5'))
-        self.assertQuerysetEqual(response.context['topImages'], [])
-
-    def test_top_5_Not_Empty(self):
-        images = {}
-        # change if you want to add all pictures
-        for x in range(1, 15):
-            id = str(x) + ".jpg"
-            # The one line below is these three lines combined:
-            # images["name"]= "1 ("+x+").jpg",
-            # images["source"] = settings.MEDIA_URL+"/"+id
-            # images["ranking"] = x+1
-            add_img(str(x), settings.MEDIA_URL + id, x + 1, "Nobilitie")
-        response = self.client.get(reverse('top5'))
-        self.assertNotEqual(response.context['topImages'], [])
+        self.assertEqual(response.status_code, 302)
 
 
     #Not signed in users are redirected sign in page when attempting
     #to access profile page
 
-    def test_profile_404(self):
+    def test_profile_302(self):
         response = self.client.get(reverse('profile'))
         self.assertEqual(response.status_code, 302)
 
-
+	#Test if see the content of unlogged user
     def test_index_logged_in_content(self):
         images = {}
         # change if you want to add all pictures
