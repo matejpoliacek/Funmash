@@ -12,7 +12,7 @@ from django.conf import settings
 def populate():
     images = {}
     #change if you want to add all pictures
-    for x in range(1,15):
+    for x in range(1,3):
         id = str(x) + ".jpg"
         #The one line below is these three lines combined:
         #images["name"]= "1 ("+x+").jpg",

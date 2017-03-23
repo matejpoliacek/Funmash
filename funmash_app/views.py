@@ -37,9 +37,10 @@ def index(request):
     ranNum2 = randint(0, numOfImages-1)
 
     while (ranNum2 == ranNum1):
-        ranNum2 = randint(0, numOfImages)
+        ranNum2 = randint(0, numOfImages-1)
 
     firstImage = images[ranNum1]
+    
     secondImage = images[ranNum2]
 
     context_dict = {'firstImage': firstImage, 'secondImage': secondImage}
